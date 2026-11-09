@@ -41,13 +41,13 @@ const Hero = ({ videoSrc }) => {
             </div>
           </div>
 
-          {/* Second Line: Indented "YOUR [4:5 VIDEO BOX] BRAND." */}
-          <div className="flex flex-wrap items-center mt-3 sm:mt-5 lg:pl-16 xl:pl-28">
+          {/* Second Line: Indented "YOUR [4:5 VIDEO BOX] BRAND." (Top-aligned) */}
+          <div className="flex flex-wrap items-start mt-3 sm:mt-5 lg:pl-16 xl:pl-28">
             <span>YOUR</span>
 
-            {/* 4:5 Aspect Ratio Video / Media Asset Box */}
+            {/* 4:5 Aspect Ratio Video / Media Asset Box (Sharp edges, top-aligned, clean without play button) */}
             <div
-              className="relative inline-flex items-center justify-center mx-3 sm:mx-6 md:mx-8 my-2 w-28 sm:w-40 md:w-52 lg:w-64 xl:w-72 2xl:w-80 aspect-[4/5] rounded-2xl sm:rounded-3xl md:rounded-[2rem] overflow-hidden bg-black shadow-2xl flex-shrink-0 group cursor-pointer"
+              className="relative inline-flex items-center justify-center mx-3 sm:mx-6 md:mx-8 mb-2 w-28 sm:w-40 md:w-52 lg:w-64 xl:w-72 2xl:w-80 aspect-[4/5] overflow-hidden bg-black shadow-2xl flex-shrink-0 group cursor-pointer"
               title="Brand Showcase Reel"
             >
               {videoSrc ? (
@@ -68,18 +68,6 @@ const Hero = ({ videoSrc }) => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               )}
-
-              {/* Overlay with subtle glass play indicator */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
-                  <svg
-                    className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 fill-current ml-0.5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
             </div>
 
             <span>BRAND.</span>

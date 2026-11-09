@@ -64,19 +64,19 @@ const Header = () => {
           isVisible || isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
         } ${
           isScrolled && !isMenuOpen
-            ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-xs'
-            : 'bg-transparent border-transparent'
+            ? 'bg-white/90 backdrop-blur-md'
+            : 'bg-transparent'
         }`}
       >
         <div className="site-container">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-20 border-b border-gray-200">
             {/* Left Side: Logo */}
             <div className="flex-shrink-0">
               <a href="#" className="flex items-center" aria-label="Ann's Clan Home">
                 <img
                   src="/logo/main-logo-black.png"
                   alt="Ann's Clan"
-                  className="h-9 md:h-10 w-auto object-contain"
+                  className="h-6 sm:h-7 md:h-8 w-auto object-contain"
                 />
               </a>
             </div>
