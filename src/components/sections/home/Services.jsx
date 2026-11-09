@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FiArrowUpRight } from 'react-icons/fi'
+import Button from '../../ui/Button'
 
 const Services = () => {
   const [activeService, setActiveService] = useState(0)
@@ -109,7 +111,7 @@ const Services = () => {
                       ))}
                     </div>
                     <span className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-400 group-hover:text-black group-hover:border-black group-hover:scale-110 transition-all">
-                      ↗
+                      <FiArrowUpRight className="w-4 h-4" />
                     </span>
                   </div>
                 </div>
@@ -128,13 +130,14 @@ const Services = () => {
               We offer bespoke solutions tailored to your brand's unique goals and vision.
             </p>
           </div>
-          <a
+          <Button
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-black bg-white rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"
+            variant="secondary"
+            icon={FiArrowUpRight}
+            className="flex-shrink-0"
           >
-            <span>Start a Conversation</span>
-            <span>↗</span>
-          </a>
+            Start a Conversation
+          </Button>
         </div>
       </div>
     </section>

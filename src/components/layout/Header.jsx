@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { FiArrowUpRight } from 'react-icons/fi'
+import Button from '../ui/Button'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -83,12 +85,9 @@ const Header = () => {
 
             {/* Right Side: CTA Button + 2-Line Hamburger Menu */}
             <div className="flex items-center gap-3 sm:gap-5">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-white bg-black rounded-full hover:bg-gray-800 transition-all duration-200 shadow-sm"
-              >
+              <Button href="#contact" variant="primary" size="sm">
                 Get in Touch
-              </a>
+              </Button>
 
               {/* 2-Line Hamburger Menu Toggle */}
               <button
@@ -161,9 +160,14 @@ const Header = () => {
                 hello@annsclan.com
               </a>
               <span className="text-gray-300">•</span>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="hover:text-black transition-colors">
-                Start a Project ↗
-              </a>
+              <Button
+                href="#contact"
+                variant="link"
+                icon={FiArrowUpRight}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Start a Project
+              </Button>
             </div>
           </div>
         </div>

@@ -1,3 +1,6 @@
+import { FiArrowUpRight, FiArrowDown } from 'react-icons/fi'
+import Button from '../../ui/Button'
+
 const Hero = ({ videoSrc }) => {
   return (
     <section
@@ -19,24 +22,12 @@ const Hero = ({ videoSrc }) => {
                 We turn creative ideas into powerful brand experiences through media, marketing and technology.
               </p>
               <div className="flex flex-wrap items-center gap-5 mt-4 sm:mt-5">
-                <a
-                  href="#contact"
-                  className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-black border-b-2 border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-all"
-                >
-                  <span>Start a Project</span>
-                  <span className="inline-block transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200">
-                    ↗
-                  </span>
-                </a>
-                <a
-                  href="#our-work"
-                  className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-500 hover:text-black transition-colors"
-                >
-                  <span>Explore Our Work</span>
-                  <span className="inline-block transform group-hover:translate-y-0.5 transition-transform duration-200">
-                    ↓
-                  </span>
-                </a>
+                <Button href="#contact" variant="link" icon={FiArrowUpRight}>
+                  Start a Project
+                </Button>
+                <Button href="#our-work" variant="ghost" icon={FiArrowDown}>
+                  Explore Our Work
+                </Button>
               </div>
             </div>
           </div>

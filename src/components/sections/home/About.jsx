@@ -1,3 +1,6 @@
+import { FiArrowUpRight } from 'react-icons/fi'
+import Button from '../../ui/Button'
+
 const About = () => {
   return (
     <section id="about" className="py-20 sm:py-32 bg-white border-t border-gray-100">
@@ -26,13 +29,9 @@ const About = () => {
 
             {/* CTA */}
             <div>
-              <a
-                href="#services"
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-black rounded-full hover:bg-gray-800 transition-all"
-              >
-                <span>Discover Our Approach</span>
-                <span>↗</span>
-              </a>
+              <Button href="#services" variant="primary" icon={FiArrowUpRight}>
+                Discover Our Approach
+              </Button>
             </div>
           </div>
 

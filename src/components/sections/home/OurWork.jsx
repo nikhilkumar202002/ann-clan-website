@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FiArrowUpRight } from 'react-icons/fi'
+import Button from '../../ui/Button'
 
 const OurWork = () => {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -110,7 +112,7 @@ const OurWork = () => {
 
                 {/* Hover Arrow Overlay Button */}
                 <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                  <span className="text-lg font-bold">↗</span>
+                  <FiArrowUpRight className="w-5 h-5" />
                 </div>
               </div>
 
@@ -134,13 +136,9 @@ const OurWork = () => {
 
         {/* View All Projects CTA */}
         <div className="mt-20 text-center">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-black border-2 border-black rounded-full hover:bg-black hover:text-white transition-all duration-300 shadow-sm"
-          >
-            <span>Have a project in mind? Let's talk</span>
-            <span>↗</span>
-          </a>
+          <Button href="#contact" variant="outline" size="lg" icon={FiArrowUpRight}>
+            Have a project in mind? Let's talk
+          </Button>
         </div>
       </div>
     </section>
