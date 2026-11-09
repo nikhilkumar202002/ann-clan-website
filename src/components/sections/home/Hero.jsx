@@ -2,7 +2,7 @@ const Hero = ({ videoSrc }) => {
   return (
     <section
       id="home"
-      className="min-h-[calc(100vh-5rem)] flex flex-col justify-center py-10 sm:py-16 bg-white overflow-hidden"
+      className="min-h-screen flex flex-col justify-center pt-20 pb-12 sm:pb-16 bg-white overflow-hidden"
     >
       <div className="site-container">
         {/* Massive Agency Headline Container */}
