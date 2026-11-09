@@ -14,11 +14,12 @@ const Footer = () => {
   ]
 
   const serviceLinks = [
-    { name: 'Brand Strategy', href: '#services' },
-    { name: 'Web Design & UI/UX', href: '#services' },
+    { name: 'Public Relations', href: '#services' },
+    { name: 'Digital Marketing', href: '#services' },
     { name: 'Web Development', href: '#services' },
-    { name: 'Content & Media', href: '#services' },
-    { name: 'Digital Growth', href: '#services' },
+    { name: 'Media Production', href: '#services' },
+    { name: 'Influencer Marketing', href: '#services' },
+    { name: 'Creative Strategy', href: '#services' },
   ]
 
   return (
