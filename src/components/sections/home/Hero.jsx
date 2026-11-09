@@ -1,6 +1,9 @@
 const Hero = ({ videoSrc }) => {
   return (
-    <section id="home" className="pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 lg:pb-32 bg-white overflow-hidden">
+    <section
+      id="home"
+      className="min-h-[calc(100vh-5rem)] flex flex-col justify-center py-10 sm:py-16 bg-white overflow-hidden"
+    >
       <div className="site-container">
         {/* Massive Agency Headline Container */}
         <div className="text-[13vw] sm:text-[11vw] md:text-[9.5vw] lg:text-[8.2vw] xl:text-[124px] font-black uppercase tracking-tighter leading-[0.88] text-black select-none">
