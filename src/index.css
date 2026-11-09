@@ -13,3 +13,36 @@
     padding-right: 50px;
   }
 }
+
+@keyframes border-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-border-spin {
+  animation: border-spin 3s linear infinite;
+}
+
+.bg-multicolor-beam {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 140deg,
+    rgba(255, 59, 48, 0) 140deg,
+    #ff3b30 175deg,
+    #ff9500 210deg,
+    #ffcc00 245deg,
+    #34c759 280deg,
+    #00c7be 315deg,
+    #af52de 350deg,
+    rgba(175, 82, 222, 0) 360deg
+  );
+}
+
+.glow-filter {
+  filter: drop-shadow(0 0 4px rgba(0, 199, 190, 0.75)) drop-shadow(0 0 7px rgba(255, 59, 48, 0.65));
+}

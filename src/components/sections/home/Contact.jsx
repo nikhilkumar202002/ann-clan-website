@@ -6,18 +6,19 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    service: 'Brand Strategy',
+    service: 'Public Relations',
     budget: '$10k - $25k',
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
 
   const services = [
-    'Brand Strategy',
-    'Web Design & UI/UX',
+    'Public Relations',
+    'Digital Marketing',
     'Web Development',
-    'Video & 3D Motion',
-    'Full Scope / Retainer',
+    'Media Production',
+    'Influencer Marketing',
+    'Creative Strategy',
   ]
 
   const budgetRanges = ['< $10k', '$10k - $25k', '$25k - $50k', '$50k+']
@@ -87,10 +88,10 @@ const Contact = () => {
           </div>
 
           {/* Right Column: Project Inquiry Form */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-12 rounded-2xl sm:rounded-3xl border border-gray-200 shadow-sm">
+          <div className="lg:col-span-7 bg-white p-8 sm:p-12 border border-gray-200 shadow-xs">
             {submitted ? (
               <div className="py-16 text-center space-y-4">
-                <span className="w-16 h-16 rounded-full bg-black text-white inline-flex items-center justify-center text-2xl font-bold">
+                <span className="w-16 h-16 bg-black text-white inline-flex items-center justify-center text-2xl font-bold">
                   <FiCheck className="w-8 h-8" />
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-gray-900">
@@ -103,7 +104,7 @@ const Contact = () => {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="text-xs font-bold uppercase tracking-wider text-black underline underline-offset-4"
+                    className="text-xs font-bold uppercase tracking-wider text-black underline underline-offset-4 cursor-pointer"
                   >
                     Send another message
                   </button>
@@ -123,7 +124,7 @@ const Contact = () => {
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-all"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-all rounded-none"
                     />
                   </div>
                   <div>
@@ -136,7 +137,7 @@ const Contact = () => {
                       placeholder="jane@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-all"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-all rounded-none"
                     />
                   </div>
                 </div>
@@ -152,7 +153,7 @@ const Contact = () => {
                         key={service}
                         type="button"
                         onClick={() => setFormData({ ...formData, service })}
-                        className={`px-3.5 py-2 text-xs font-semibold rounded-full border transition-all cursor-pointer ${
+                        className={`px-3.5 py-2 text-xs font-semibold border transition-all cursor-pointer ${
                           formData.service === service
                             ? 'bg-black text-white border-black'
                             : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-400'
@@ -175,7 +176,7 @@ const Contact = () => {
                         key={budget}
                         type="button"
                         onClick={() => setFormData({ ...formData, budget })}
-                        className={`px-3.5 py-2 text-xs font-semibold rounded-full border transition-all cursor-pointer ${
+                        className={`px-3.5 py-2 text-xs font-semibold border transition-all cursor-pointer ${
                           formData.budget === budget
                             ? 'bg-black text-white border-black'
                             : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-400'
@@ -197,7 +198,7 @@ const Contact = () => {
                     placeholder="Share your goals, timeline, and vision..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-all resize-none"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-all resize-none rounded-none"
                   ></textarea>
                 </div>
 

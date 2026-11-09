@@ -10,6 +10,7 @@ const Button = ({
   fullWidth = false,
   className = '',
   disabled = false,
+  glowing = false,
   ...props
 }) => {
   const baseStyles =
@@ -22,6 +23,7 @@ const Button = ({
     link: 'text-black border-b-2 border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 rounded-none bg-transparent px-0 py-0',
     ghost: 'text-gray-500 hover:text-black bg-transparent px-0 py-0',
     dark: 'bg-gray-950 text-white hover:bg-white hover:text-gray-950 border border-gray-800',
+    glow: 'bg-black text-white',
   }
 
   // Explicit font sizes and gaps so font size is ALWAYS strictly controlled
@@ -64,6 +66,38 @@ const Button = ({
       )}
     </>
   )
+
+  const isGlowing = glowing || variant === 'glow'
+
+  if (isGlowing) {
+    const Component = href ? 'a' : 'button'
+    const buttonProps = href ? { href, ...props } : { type, disabled, ...props }
+    const radiusClass = roundeds[rounded] || roundeds.full
+
+    return (
+      <Component
+        {...buttonProps}
+        className={`relative inline-flex items-center justify-center ${radiusClass} ${widthStyle} ${disabledStyles} group cursor-pointer select-none transition-transform duration-200 active:scale-95 ${className}`.trim()}
+      >
+        {/* Sharp Border Clipping Track with Neon Line Glow (NO rotating background) */}
+        <span
+          className={`relative w-full h-full p-[2px] ${radiusClass} overflow-hidden inline-flex items-center justify-center glow-filter`}
+        >
+          {/* Moving Multi-Color Border Beam */}
+          <span
+            className="absolute inset-[-250%] animate-border-spin bg-multicolor-beam pointer-events-none"
+          />
+
+          {/* Inner Static Solid Button Core */}
+          <span
+            className={`relative z-10 w-full h-full inline-flex items-center justify-center font-bold uppercase tracking-wider bg-black text-white group-hover:bg-neutral-900 transition-colors duration-200 ${appliedFont} ${appliedPadding} ${radiusClass}`}
+          >
+            {content}
+          </span>
+        </span>
+      </Component>
+    )
+  }
 
   if (href) {
     return (

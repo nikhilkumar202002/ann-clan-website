@@ -88,7 +88,7 @@ const Header = () => {
 
             {/* Right Side: CTA Button + 2-Line Hamburger Menu */}
             <div className="flex items-center gap-3 sm:gap-5">
-              <Button href="#contact" variant="primary" size="sm">
+              <Button href="#contact" variant="primary" size="sm" glowing>
                 Get in Touch
               </Button>
 
