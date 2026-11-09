@@ -3,48 +3,107 @@ import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 
 const Services = () => {
-  const [activeService, setActiveService] = useState(0)
+  const [hoveredIndex, setHoveredIndex] = useState(null)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
   const services = [
     {
       id: '01',
-      title: 'Brand Strategy & Identity',
+      title: 'Public Relations',
       description:
-        'We craft distinct visual languages and strategic positioning that capture attention, establish authority, and resonate deeply with your audience.',
-      tags: ['Brand Architecture', 'Visual Identity', 'Voice & Tone', 'Design Systems', 'Brand Guidelines'],
+        'Strategic brand communications, media relations, high-impact press coverage, and reputation management that build unshakeable credibility.',
+      image:
+        'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=80',
     },
     {
       id: '02',
-      title: 'UI/UX & Digital Experience',
+      title: 'Digital Marketing',
       description:
-        'Human-centric interface design built for modern web standards. We design interactive products and web experiences that convert and delight.',
-      tags: ['User Research', 'Wireframing & Prototyping', 'Website Design', 'Mobile UI/UX', 'Interaction Design'],
+        'Data-driven performance campaigns, omnichannel growth strategies, precision targeting, and conversion funnels engineered to scale revenue.',
+      image:
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
     },
     {
       id: '03',
-      title: 'Web & Creative Development',
+      title: 'Web Development',
       description:
-        'Cutting-edge engineering built for speed, responsiveness, and scale. We bring bold creative concepts into high-performance digital reality.',
-      tags: ['React & Next.js', 'Tailwind CSS', 'Headless CMS', 'Creative Development', 'Speed Optimization'],
+        'Bespoke digital platforms, high-speed modern web applications, interactive 3D experiences, and robust architectures built for long-term scalability.',
+      image:
+        'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80',
     },
     {
       id: '04',
-      title: 'Media, Video & Motion',
+      title: 'Media Production',
       description:
-        'Dynamic visuals, 3D animations, and cinematic video production that bring stories to life and give brands an unforgettable edge.',
-      tags: ['Art Direction', '3D Motion Design', 'Video Production', 'Micro-interactions', 'Brand Films'],
+        'Cinematic video production, commercial photography, motion design, and high-production brand films that evoke emotion and drive action.',
+      image:
+        'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1000&q=80',
     },
     {
       id: '05',
-      title: 'Growth & Digital Marketing',
+      title: 'Influencer Marketing',
       description:
-        'Data-backed distribution, SEO strategies, and content pipelines designed to amplify your reach and maximize measurable ROI.',
-      tags: ['Technical SEO', 'Performance Marketing', 'Content Strategy', 'Social Campaigns', 'Conversion Optimization'],
+        'Connecting brands with vetted creators and culture-shapers to run authentic ambassador programs, viral activations, and creator-led campaigns.',
+      image:
+        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80',
+    },
+    {
+      id: '06',
+      title: 'Creative Strategy',
+      description:
+        'Uncompromising brand positioning, visual identity systems, creative direction, and cultural narratives that set you apart from competitors.',
+      image:
+        'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80',
     },
   ]
 
+  const handleMouseMove = (e) => {
+    setMousePos({ x: e.clientX, y: e.clientY })
+  }
+
   return (
-    <section id="services" className="py-24 sm:py-32 bg-white border-t border-gray-100">
+    <section
+      id="services"
+      onMouseMove={handleMouseMove}
+      className="py-24 sm:py-32 bg-white border-t border-gray-100 relative"
+    >
+      {/* Floating Tilt Image Preview on Hover with Smooth Vertical Slide (Desktop) */}
+      <div
+        className="fixed pointer-events-none z-50 hidden lg:block"
+        style={{
+          left: `${mousePos.x + 30}px`,
+          top: `${mousePos.y - 140}px`,
+          opacity: hoveredIndex !== null ? 1 : 0,
+          transform:
+            hoveredIndex !== null
+              ? 'rotate(-4deg) scale(1)'
+              : 'rotate(0deg) scale(0.92)',
+          transition:
+            'opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
+      >
+        {/* Compact 3:4 Aspect Ratio Container without border */}
+        <div className="w-48 sm:w-56 aspect-[3/4] bg-black overflow-hidden shadow-2xl relative">
+          {/* Vertical sliding track: slides smoothly to top when hovering another service */}
+          <div
+            className="w-full h-full flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{
+              transform: `translateY(-${(hoveredIndex ?? 0) * 100}%)`,
+            }}
+          >
+            {services.map((service) => (
+              <div key={service.id} className="w-full h-full flex-shrink-0 relative">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="site-container">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-8">
@@ -54,65 +113,60 @@ const Services = () => {
           </span>
         </div>
 
-        {/* Section Title & Subheading */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-16 sm:mb-20">
-          <div className="lg:col-span-8">
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-gray-900 leading-[1.05]">
-              Capabilities built to propel your brand forward.
-            </h2>
-          </div>
-          <div className="lg:col-span-4 flex items-end">
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              We combine strategic rigor, exquisite craft, and technical mastery to solve complex challenges and build category-defining brands.
-            </p>
-          </div>
+        {/* Section Title */}
+        <div className="mb-16 sm:mb-20">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-gray-900 leading-[1.05] max-w-5xl">
+            Everything Your Brand Needs to Grow.
+          </h2>
         </div>
 
         {/* Interactive Services List */}
         <div className="border-t border-gray-200">
           {services.map((service, index) => {
-            const isActive = activeService === index
+            const isHovered = hoveredIndex === index
             return (
               <div
                 key={service.id}
-                onMouseEnter={() => setActiveService(index)}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
                 className={`group border-b border-gray-200 py-8 sm:py-12 transition-all duration-300 cursor-pointer ${
-                  isActive ? 'bg-gray-50/60 -mx-4 px-4 sm:-mx-8 sm:px-8 rounded-xl' : ''
+                  isHovered ? 'bg-gray-50/70 -mx-4 px-4 sm:-mx-8 sm:px-8' : ''
                 }`}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-                  {/* Number & Service Title */}
-                  <div className="lg:col-span-5 flex items-baseline gap-4 sm:gap-6">
-                    <span className="text-xs sm:text-sm font-mono font-bold text-gray-400 group-hover:text-black transition-colors">
-                      /{service.id}
+                  {/* Bold Number (No slash) & Service Title */}
+                  <div className="lg:col-span-5 flex items-baseline gap-5 sm:gap-8">
+                    <span className="text-base sm:text-xl font-black font-mono text-black transition-transform duration-300 group-hover:scale-110">
+                      {service.id}
                     </span>
-                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors duration-200">
                       {service.title}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <div className="lg:col-span-4">
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  <div className="lg:col-span-5">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
                       {service.description}
                     </p>
                   </div>
 
-                  {/* Tags & Action Indicator */}
-                  <div className="lg:col-span-3 flex flex-col sm:flex-row lg:flex-col justify-between items-start lg:items-end gap-4">
-                    <div className="flex flex-wrap gap-1.5 lg:justify-end">
-                      {service.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className="inline-block px-2.5 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-700 group-hover:bg-black group-hover:text-white transition-colors duration-200"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <span className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-400 group-hover:text-black group-hover:border-black group-hover:scale-110 transition-all">
-                      <FiArrowUpRight className="w-4 h-4" />
+                  {/* Action Arrow Indicator */}
+                  <div className="lg:col-span-2 flex justify-start lg:justify-end items-center pt-1">
+                    <span className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-black group-hover:border-black group-hover:scale-110 transition-all duration-300">
+                      <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
+                  </div>
+                </div>
+
+                {/* Mobile Inline Preview on Touch / Small Screens */}
+                <div className="mt-4 lg:hidden">
+                  <div className="w-full max-w-[220px] aspect-[3/4] overflow-hidden bg-gray-100">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -145,4 +199,3 @@ const Services = () => {
 }
 
 export default Services
-

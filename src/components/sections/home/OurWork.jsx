@@ -92,8 +92,8 @@ const OurWork = () => {
               key={project.id}
               className="group cursor-pointer flex flex-col"
             >
-              {/* Image Container */}
-              <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-100 mb-6 shadow-sm">
+              {/* Image Container: Sharp without border-radius or shadow */}
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] overflow-hidden bg-gray-100 mb-6">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -102,16 +102,16 @@ const OurWork = () => {
 
                 {/* Floating Meta Badges */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                  <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-white/90 backdrop-blur-md rounded-full text-black shadow-xs">
+                  <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-white/90 backdrop-blur-md text-black">
                     {project.category}
                   </span>
-                  <span className="px-3 py-1 text-xs font-mono font-semibold bg-black/60 backdrop-blur-md rounded-full text-white shadow-xs">
+                  <span className="px-3 py-1 text-xs font-mono font-semibold bg-black text-white">
                     {project.year}
                   </span>
                 </div>
 
                 {/* Hover Arrow Overlay Button */}
-                <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                <div className="absolute bottom-4 right-4 w-11 h-11 bg-white text-black flex items-center justify-center shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                   <FiArrowUpRight className="w-5 h-5" />
                 </div>
               </div>
@@ -126,8 +126,8 @@ const OurWork = () => {
                     {project.description}
                   </p>
                 </div>
-                <span className="text-xs font-mono font-bold text-gray-400 group-hover:text-black transition-colors pt-1">
-                  /{project.id}
+                <span className="text-sm font-mono font-black text-black group-hover:text-gray-600 transition-colors pt-1">
+                  {project.id}
                 </span>
               </div>
             </div>

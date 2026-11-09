@@ -1,4 +1,5 @@
 import { FiTwitter, FiLinkedin, FiInstagram } from 'react-icons/fi'
+import Button from '../ui/Button'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -113,12 +114,15 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="w-full px-3.5 py-2.5 bg-gray-900 border border-gray-800 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors"
               />
-              <button
+              <Button
                 type="submit"
-                className="w-full px-3.5 py-2.5 bg-white text-gray-950 text-sm font-medium rounded-lg hover:bg-gray-100 transition-colors"
+                variant="secondary"
+                rounded="lg"
+                fullWidth
+                size="sm"
               >
                 Subscribe
-              </button>
+              </Button>
             </form>
           </div>
         </div>

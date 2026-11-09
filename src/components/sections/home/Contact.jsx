@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FiArrowUpRight, FiCheck } from 'react-icons/fi'
+import Button from '../../ui/Button'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -202,13 +203,15 @@ const Contact = () => {
 
                 {/* Submit Button */}
                 <div>
-                  <button
+                  <Button
                     type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-black rounded-full hover:bg-gray-800 transition-all shadow-sm cursor-pointer"
+                    variant="primary"
+                    size="lg"
+                    icon={FiArrowUpRight}
+                    className="w-full sm:w-auto"
                   >
-                    <span>Send Inquiry</span>
-                    <FiArrowUpRight className="w-4 h-4" />
-                  </button>
+                    Send Inquiry
+                  </Button>
                 </div>
               </form>
             )}
