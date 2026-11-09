@@ -19,16 +19,22 @@ const Button = ({
     primary: 'bg-black text-white hover:bg-gray-800 shadow-xs',
     secondary: 'bg-white text-black border border-gray-200 hover:bg-black hover:text-white hover:border-black',
     outline: 'border-2 border-black text-black hover:bg-black hover:text-white',
-    link: 'text-black border-b-2 border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 rounded-none bg-transparent',
-    ghost: 'text-gray-500 hover:text-black bg-transparent',
+    link: 'text-black border-b-2 border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 rounded-none bg-transparent px-0 py-0',
+    ghost: 'text-gray-500 hover:text-black bg-transparent px-0 py-0',
     dark: 'bg-gray-950 text-white hover:bg-white hover:text-gray-950 border border-gray-800',
   }
 
-  const sizes = {
-    sm: 'text-xs px-4 py-2 gap-1.5',
-    md: 'text-xs sm:text-sm px-6 py-3 gap-2',
-    lg: 'text-sm sm:text-base px-8 py-4 gap-2.5',
-    none: 'p-0 gap-1.5',
+  // Explicit font sizes and gaps so font size is ALWAYS strictly controlled
+  const fontSizes = {
+    sm: 'text-xs gap-1.5',
+    md: 'text-xs sm:text-sm gap-2',
+    lg: 'text-sm sm:text-base gap-2.5',
+  }
+
+  const paddings = {
+    sm: 'px-4 py-2',
+    md: 'px-6 py-3',
+    lg: 'px-8 py-4',
   }
 
   const roundeds = {
@@ -38,12 +44,14 @@ const Button = ({
     lg: 'rounded-lg',
   }
 
-  const appliedSize = variant === 'link' ? sizes.none : sizes[size] || sizes.md
-  const appliedRounded = variant === 'link' ? '' : roundeds[rounded] || roundeds.full
+  const isTextOnly = variant === 'link' || variant === 'ghost'
+  const appliedFont = fontSizes[size] || fontSizes.md
+  const appliedPadding = isTextOnly ? 'px-0 py-0' : paddings[size] || paddings.md
+  const appliedRounded = isTextOnly ? 'rounded-none' : roundeds[rounded] || roundeds.full
   const widthStyle = fullWidth ? 'w-full' : ''
   const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''
 
-  const combinedClasses = `${baseStyles} ${variants[variant] || variants.primary} ${appliedSize} ${appliedRounded} ${widthStyle} ${disabledStyles} ${className}`.trim()
+  const combinedClasses = `${baseStyles} ${variants[variant] || variants.primary} ${appliedFont} ${appliedPadding} ${appliedRounded} ${widthStyle} ${disabledStyles} ${className}`.trim()
 
   const content = (
     <>

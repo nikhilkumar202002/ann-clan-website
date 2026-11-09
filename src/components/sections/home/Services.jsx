@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { FiArrowUpRight } from 'react-icons/fi'
-import Button from '../../ui/Button'
 
 const Services = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null)
@@ -121,15 +120,18 @@ const Services = () => {
         </div>
 
         {/* Interactive Services List */}
-        <div className="border-t border-gray-200">
+        <div>
           {services.map((service, index) => {
             const isHovered = hoveredIndex === index
+            const isLast = index === services.length - 1
             return (
               <div
                 key={service.id}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`group border-b border-gray-200 py-8 sm:py-12 transition-all duration-300 cursor-pointer ${
+                className={`group ${
+                  !isLast ? 'border-b border-gray-200' : ''
+                } py-8 sm:py-12 transition-all duration-300 cursor-pointer ${
                   isHovered ? 'bg-gray-50/70 -mx-4 px-4 sm:-mx-8 sm:px-8' : ''
                 }`}
               >
@@ -174,25 +176,7 @@ const Services = () => {
           })}
         </div>
 
-        {/* Bottom CTA Banner inside Services */}
-        <div className="mt-16 sm:mt-20 p-8 sm:p-12 rounded-2xl bg-gray-950 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <h4 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight">
-              Have a custom project in mind?
-            </h4>
-            <p className="text-sm sm:text-base text-gray-400 mt-2">
-              We offer bespoke solutions tailored to your brand's unique goals and vision.
-            </p>
-          </div>
-          <Button
-            href="#contact"
-            variant="secondary"
-            icon={FiArrowUpRight}
-            className="flex-shrink-0"
-          >
-            Start a Conversation
-          </Button>
-        </div>
+  
       </div>
     </section>
   )

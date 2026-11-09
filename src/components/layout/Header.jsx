@@ -51,11 +51,14 @@ const Header = () => {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden'
+      window.lenis?.stop()
     } else {
       document.body.style.overflow = ''
+      window.lenis?.start()
     }
     return () => {
       document.body.style.overflow = ''
+      window.lenis?.start()
     }
   }, [isMenuOpen])
 
