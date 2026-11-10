@@ -4,37 +4,74 @@ import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 import FlipText from '../../ui/FlipText'
 
-// Animation variants with high-end cubic-bezier easing
-const containerVariants = {
+// Word-by-word smooth fade variants with high-end cubic-bezier easing
+const subHeadingContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.16,
-      delayChildren: 0.2,
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
     },
   },
 }
 
-const itemFadeUp = {
-  hidden: { opacity: 0, y: 35 },
+const subHeadingWordItem = {
+  hidden: { opacity: 0, y: -15, filter: 'blur(4px)' },
   visible: {
     opacity: 1,
     y: 0,
+    filter: 'blur(0px)',
     transition: {
-      duration: 0.9,
+      duration: 0.75,
       ease: [0.16, 1, 0.3, 1],
     },
   },
 }
 
-const subHeadingAnim = {
-  hidden: { opacity: 0, y: -20 },
+const headingWordContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.25,
+    },
+  },
+}
+
+const headingWordItem = {
+  hidden: { opacity: 0, y: 35, filter: 'blur(8px)' },
   visible: {
     opacity: 1,
     y: 0,
+    filter: 'blur(0px)',
     transition: {
-      duration: 0.8,
+      duration: 0.85,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+}
+
+const descWordContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.035,
+      delayChildren: 0.65,
+    },
+  },
+}
+
+const descWordItem = {
+  hidden: { opacity: 0, y: 16, filter: 'blur(5px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.65,
       ease: [0.16, 1, 0.3, 1],
     },
   },
@@ -111,40 +148,78 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/75" />
       </motion.div>
 
-      {/* Hero Core Content: Center Aligned with Smooth Framer Motion */}
+      {/* Hero Core Content: Center Aligned with Word-by-Word Smooth Fade */}
       <div className="relative z-10 site-container my-auto flex flex-col items-center justify-center text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="w-full max-w-5xl mx-auto flex flex-col items-center"
-        >
-          {/* Sub Heading: Text only with hover flip animation */}
-          <motion.div variants={subHeadingAnim} className="mb-4 sm:mb-6">
-            <span className="group text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-gray-300 hover:text-white transition-colors duration-200 select-none drop-shadow-sm cursor-pointer inline-flex">
-              <FlipText>Ideas. Stories. Impact.</FlipText>
-            </span>
+        <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
+          {/* Sub Heading: Word-by-word smooth fade with hover flip animation */}
+          <motion.div
+            variants={subHeadingContainer}
+            initial="hidden"
+            animate="visible"
+            className="mb-4 sm:mb-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3"
+          >
+            {['Ideas.', 'Stories.', 'Impact.'].map((word) => (
+              <motion.span
+                key={word}
+                variants={subHeadingWordItem}
+                className="group text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-gray-300 hover:text-white transition-colors duration-200 select-none drop-shadow-sm cursor-pointer inline-flex"
+              >
+                <FlipText>{word}</FlipText>
+              </motion.span>
+            ))}
           </motion.div>
 
-          {/* Main Heading */}
-          <motion.h1
-            variants={itemFadeUp}
-            className="text-[11vw] sm:text-[9.5vw] md:text-[8vw] lg:text-[7.2vw] xl:text-[110px] 2xl:text-[132px] font-black uppercase tracking-tight leading-[0.92] text-white select-none drop-shadow-lg"
-          >
-            WE GROW YOUR BRAND.
-          </motion.h1>
+          {/* Main Heading: Word-by-word smooth fade */}
+          <h1 className="text-[11vw] sm:text-[9.5vw] md:text-[8vw] lg:text-[7.2vw] xl:text-[110px] 2xl:text-[132px] font-black uppercase tracking-tight leading-[0.92] text-white select-none drop-shadow-lg">
+            <motion.span
+              variants={headingWordContainer}
+              initial="hidden"
+              animate="visible"
+              className="inline-flex flex-wrap justify-center gap-x-[0.26em]"
+            >
+              {['WE', 'GROW', 'YOUR', 'BRAND.'].map((word) => (
+                <motion.span
+                  key={word}
+                  variants={headingWordItem}
+                  className="inline-block"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.span>
+          </h1>
 
-          {/* Description */}
-          <motion.p
-            variants={itemFadeUp}
-            className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-sm"
-          >
-            We create powerful brand experiences through media, marketing, creativity and technology.
-          </motion.p>
+          {/* Description: Word-by-word smooth fade */}
+          <p className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-sm">
+            <motion.span
+              variants={descWordContainer}
+              initial="hidden"
+              animate="visible"
+              className="inline-flex flex-wrap justify-center gap-x-[0.28em]"
+            >
+              {'We create powerful brand experiences through media, marketing, creativity and technology.'
+                .split(' ')
+                .map((word, index) => (
+                  <motion.span
+                    key={index}
+                    variants={descWordItem}
+                    className="inline-block"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+            </motion.span>
+          </p>
 
-          {/* CTAs: Center Aligned, Sharp (No border-radius, no multicolor) */}
+          {/* CTAs: Center Aligned, Sharp with subtle spring */}
           <motion.div
-            variants={itemFadeUp}
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.85,
+              delay: 1.05,
+              ease: [0.16, 1, 0.3, 1],
+            }}
             className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10"
           >
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -172,7 +247,7 @@ const Hero = () => {
               </Button>
             </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
