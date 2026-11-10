@@ -57,16 +57,15 @@ const Services = () => {
     <section id="services" className="py-24 sm:py-32 bg-white border-t border-gray-100">
       <div className="site-container">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-8">
-          <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
-          <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
-            [ SERVICES & CAPABILITIES ]
-          </span>
-        </div>
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
+            <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
+              [ SERVICES & CAPABILITIES ]
+            </span>
+          </div>
 
-        {/* Section Title */}
-        <div className="mb-14 sm:mb-16">
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-gray-900 leading-[1.05] max-w-5xl">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-gray-900 leading-[1.05]">
             Everything Your Brand Needs to Grow.
           </h2>
         </div>
@@ -74,52 +73,49 @@ const Services = () => {
         {/* 3-Column Services Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {services.map((service) => (
-            <div
+            <a
               key={service.id}
-              className="group bg-white border border-gray-200 flex flex-col justify-between transition-all duration-300 hover:border-black shadow-xs hover:shadow-md"
+              href="#contact"
+              className="group bg-white border border-gray-200 flex flex-col overflow-hidden transition-all duration-300 hover:shadow-md"
             >
-              <div>
-                {/* Service Image */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  {/* Service Number Tag */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 text-xs font-mono font-bold bg-black text-white">
-                      {service.id}
-                    </span>
-                  </div>
-                </div>
+              {/* Service Image */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
 
-                {/* Card Content: Name & Expert Text */}
-                <div className="p-6 sm:p-8 space-y-3">
-                  <h3 className="text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
+              {/* Card Content: Name & Expert Text */}
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors">
+                      {service.title}
+                    </h3>
+                    <FiArrowUpRight className="text-gray-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-xl shrink-0" />
+                  </div>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal mt-3">
                     {service.description}
                   </p>
                 </div>
               </div>
-
-              {/* Card Footer: Button */}
-              <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
-                <Button
-                  href="#contact"
-                  variant="primary"
-                  size="sm"
-                  rounded="none"
-                  icon={FiArrowUpRight}
-                  className="w-full sm:w-auto"
-                >
-                  Explore Service
-                </Button>
-              </div>
-            </div>
+            </a>
           ))}
+        </div>
+
+        {/* Bottom CTA for All Services */}
+        <div className="mt-12 sm:mt-16 flex justify-center">
+          <Button
+            href="#contact"
+            variant="primary"
+            size="lg"
+            rounded="none"
+            icon={FiArrowUpRight}
+          >
+            View All Services
+          </Button>
         </div>
       </div>
     </section>

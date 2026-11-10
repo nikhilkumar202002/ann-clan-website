@@ -56,30 +56,30 @@ const About = () => {
               Ann's Clan is a multidisciplinary creative collective dedicated to transforming forward-thinking brands into market leaders. By fusing thoughtful design, strategic narrative, and modern engineering, we elevate ambitious brands with bespoke solutions that drive measurable, sustainable growth.
             </p>
 
-            {/* Numbering Stats: In between lines only */}
+            {/* Numbering Stats: In between lines only with Anton font and counter animation */}
             <div className="border-y border-gray-200 py-6 sm:py-8 my-6 sm:my-8">
               <div className="grid grid-cols-3 gap-4 sm:gap-8">
                 <div>
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
-                    05+
+                  <div className="font-anton text-4xl sm:text-5xl lg:text-6xl text-black tracking-wide leading-none">
+                    <Counter target={5} suffix="+" padZero={true} duration={1.8} />
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1.5">
+                  <div className="text-xs sm:text-sm text-gray-500 font-medium mt-2">
                     Core Services
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
-                    08+
+                  <div className="font-anton text-4xl sm:text-5xl lg:text-6xl text-black tracking-wide leading-none">
+                    <Counter target={8} suffix="+" padZero={true} duration={2} />
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1.5">
+                  <div className="text-xs sm:text-sm text-gray-500 font-medium mt-2">
                     Featured Brands
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
-                    360°
+                  <div className="font-anton text-4xl sm:text-5xl lg:text-6xl text-black tracking-wide leading-none">
+                    <Counter target={360} suffix="°" padZero={false} duration={2.2} />
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1.5">
+                  <div className="text-xs sm:text-sm text-gray-500 font-medium mt-2">
                     Creative Solutions
                   </div>
                 </div>
