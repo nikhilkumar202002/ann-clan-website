@@ -27,28 +27,28 @@ const OurClients = () => {
   ]
 
   return (
-    <section id="clients" className="py-24 sm:py-32 bg-black text-white border-t border-neutral-900">
+    <section id="clients" className="py-24 sm:py-32 bg-white text-gray-900 border-t border-gray-100">
       <div className="site-container">
         {/* Section Heading: Left Aligned */}
         <div className="mb-14 sm:mb-20">
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-2.5 h-2.5 rounded-full bg-white"></span>
-            <span className="text-xs font-bold tracking-widest uppercase text-gray-400">
+            <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
+            <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
               [ OUR CLIENTS ]
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.05] max-w-4xl">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-gray-900 leading-[1.05] max-w-4xl">
             TRUSTED BY BRANDS THAT THINK BIG.
           </h2>
         </div>
 
         {/* Client Logos: Inside Grid Style with Actual Image Colors */}
-        <div className="border border-white/15 bg-white/15 grid grid-cols-2 md:grid-cols-3 gap-px overflow-hidden">
+        <div className="border border-gray-200 bg-gray-200 grid grid-cols-2 md:grid-cols-3 gap-px overflow-hidden">
           {clients.map((client) => (
             <div
               key={client.name}
-              className="group bg-black flex items-center justify-center h-36 sm:h-44 p-6 sm:p-10 hover:bg-neutral-950 transition-colors duration-300"
+              className="group bg-white flex items-center justify-center h-36 sm:h-44 p-6 sm:p-10 hover:bg-gray-50 transition-colors duration-300"
             >
               <img
                 src={client.logo}
