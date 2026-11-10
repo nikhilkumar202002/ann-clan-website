@@ -4,72 +4,37 @@ import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 import FlipText from '../../ui/FlipText'
 
-// Word-by-word and container animation variants
-const headingContainer = {
+// Animation variants with high-end cubic-bezier easing
+const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.25,
+      staggerChildren: 0.16,
+      delayChildren: 0.2,
     },
   },
 }
 
-const headingWordVariant = {
-  hidden: {
-    opacity: 0,
-    y: 35,
-  },
+const itemFadeUp = {
+  hidden: { opacity: 0, y: 35 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.85,
+      duration: 0.9,
       ease: [0.16, 1, 0.3, 1],
     },
   },
 }
 
-const descContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.035,
-      delayChildren: 0.75,
-    },
-  },
-}
-
-const descWordVariant = {
-  hidden: {
-    opacity: 0,
-    y: 16,
-    filter: 'blur(4px)',
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    transition: {
-      duration: 0.6,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  },
-}
-
-const ctaVariant = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
+const subHeadingAnim = {
+  hidden: { opacity: 0, y: -20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.8,
-      delay: 1.15,
       ease: [0.16, 1, 0.3, 1],
     },
   },
@@ -82,12 +47,6 @@ const Hero = () => {
     '/video/banner-video-1.mp4',
     '/video/banner-video-2.mp4',
   ]
-
-  const headingWords = ['WE', 'GROW', 'YOUR', 'BRAND.']
-  const descWords =
-    'We create powerful brand experiences through media, marketing, creativity and technology.'.split(
-      ' '
-    )
 
   const videoRefs = useRef([])
 
@@ -148,67 +107,44 @@ const Hero = () => {
           )
         })}
 
-        {/* Cinematic Film Overlay (Lighter in center so video shines through for negative blend) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/45" />
+        {/* Cinematic Film Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/75" />
       </motion.div>
 
       {/* Hero Core Content: Center Aligned with Smooth Framer Motion */}
       <div className="relative z-10 site-container my-auto flex flex-col items-center justify-center text-center">
-        <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="w-full max-w-5xl mx-auto flex flex-col items-center"
+        >
           {/* Sub Heading: Text only with hover flip animation */}
-          <motion.div
-            initial={{ opacity: 0, y: -20, filter: 'blur(6px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-4 sm:mb-6"
-          >
+          <motion.div variants={subHeadingAnim} className="mb-4 sm:mb-6">
             <span className="group text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-gray-300 hover:text-white transition-colors duration-200 select-none drop-shadow-sm cursor-pointer inline-flex">
               <FlipText>Ideas. Stories. Impact.</FlipText>
             </span>
           </motion.div>
 
-          {/* Main Heading: Negative filter (mix-blend-difference) reacting directly to the background video */}
+          {/* Main Heading */}
           <motion.h1
-            variants={headingContainer}
-            initial="hidden"
-            animate="visible"
-            style={{ mixBlendMode: 'difference' }}
-            className="text-[11vw] sm:text-[9.5vw] md:text-[8vw] lg:text-[7.2vw] xl:text-[110px] 2xl:text-[132px] font-black uppercase tracking-tight leading-[0.92] text-white select-none flex flex-wrap justify-center mix-blend-difference"
+            variants={itemFadeUp}
+            className="text-[11vw] sm:text-[9.5vw] md:text-[8vw] lg:text-[7.2vw] xl:text-[110px] 2xl:text-[132px] font-black uppercase tracking-tight leading-[0.92] text-white select-none drop-shadow-lg"
           >
-            {headingWords.map((word, i) => (
-              <motion.span
-                key={i}
-                variants={headingWordVariant}
-                className="inline-block mx-[0.16em]"
-              >
-                {word}
-              </motion.span>
-            ))}
+            WE GROW YOUR BRAND.
           </motion.h1>
 
-          {/* Description: Word-by-Word Smooth Cascading Fade */}
+          {/* Description */}
           <motion.p
-            variants={descContainer}
-            initial="hidden"
-            animate="visible"
-            className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-sm flex flex-wrap justify-center"
+            variants={itemFadeUp}
+            className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-sm"
           >
-            {descWords.map((word, i) => (
-              <motion.span
-                key={i}
-                variants={descWordVariant}
-                className="inline-block mr-[0.25em]"
-              >
-                {word}
-              </motion.span>
-            ))}
+            We create powerful brand experiences through media, marketing, creativity and technology.
           </motion.p>
 
           {/* CTAs: Center Aligned, Sharp (No border-radius, no multicolor) */}
           <motion.div
-            variants={ctaVariant}
-            initial="hidden"
-            animate="visible"
+            variants={itemFadeUp}
             className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10"
           >
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -236,7 +172,7 @@ const Hero = () => {
               </Button>
             </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
