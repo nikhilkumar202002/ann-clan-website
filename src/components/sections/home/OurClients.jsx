@@ -24,6 +24,14 @@ const OurClients = () => {
       name: 'Xylem Learning',
       logo: '/client-logos/xylem.png',
     },
+    {
+      name: 'Teakwood Aristy',
+      logo: '/client-logos/TA_Branding-1.png',
+    },
+    {
+      name: 'GoAmaze',
+      logo: '/client-logos/main-logo.png',
+    },
   ]
 
   return (
@@ -43,18 +51,18 @@ const OurClients = () => {
           </h2>
         </div>
 
-        {/* Client Logos: Inside Grid Style with Actual Image Colors */}
-        <div className="border border-gray-200 bg-gray-200 grid grid-cols-2 md:grid-cols-3 gap-px overflow-hidden">
+        {/* Client Logos: Inside Grid Style (4 Columns) */}
+        <div className="border border-gray-200 bg-gray-200 grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden">
           {clients.map((client) => (
             <div
               key={client.name}
-              className="group bg-white flex items-center justify-center h-36 sm:h-44 p-6 sm:p-10 hover:bg-gray-50 transition-colors duration-300"
+              className="group bg-white flex items-center justify-center h-32 sm:h-36 lg:h-40 p-5 sm:p-6 lg:p-8 hover:bg-gray-50 transition-colors duration-300"
             >
               <img
                 src={client.logo}
                 alt={client.name}
                 title={client.name}
-                className="max-h-12 sm:max-h-16 max-w-[75%] sm:max-w-[70%] w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                className="max-h-11 sm:max-h-14 max-w-[75%] sm:max-w-[70%] w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
           ))}
