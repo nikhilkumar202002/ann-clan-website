@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import { FiArrowUpRight } from 'react-icons/fi'
+import Button from '../../ui/Button'
 
 const Services = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null)
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-
   const services = [
     {
       id: '01',
@@ -56,127 +53,74 @@ const Services = () => {
     },
   ]
 
-  const handleMouseMove = (e) => {
-    setMousePos({ x: e.clientX, y: e.clientY })
-  }
-
   return (
-    <section
-      id="services"
-      onMouseMove={handleMouseMove}
-      className="py-24 sm:py-32 bg-white border-t border-gray-100 relative"
-    >
-      {/* Floating Tilt Image Preview on Hover with Smooth Vertical Slide (Desktop) */}
-      <div
-        className="fixed pointer-events-none z-50 hidden lg:block"
-        style={{
-          left: `${mousePos.x + 30}px`,
-          top: `${mousePos.y - 140}px`,
-          opacity: hoveredIndex !== null ? 1 : 0,
-          transform:
-            hoveredIndex !== null
-              ? 'rotate(-4deg) scale(1)'
-              : 'rotate(0deg) scale(0.92)',
-          transition:
-            'opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-        }}
-      >
-        {/* Compact 3:4 Aspect Ratio Container without border */}
-        <div className="w-48 sm:w-56 aspect-[3/4] bg-black overflow-hidden shadow-2xl relative">
-          {/* Vertical sliding track: slides smoothly to top when hovering another service */}
-          <div
-            className="w-full h-full flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-            style={{
-              transform: `translateY(-${(hoveredIndex ?? 0) * 100}%)`,
-            }}
-          >
-            {services.map((service) => (
-              <div key={service.id} className="w-full h-full flex-shrink-0 relative">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
+    <section id="services" className="py-24 sm:py-32 bg-white border-t border-gray-100">
       <div className="site-container">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-8">
           <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
           <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
-            [ 02 / SERVICES & CAPABILITIES ]
+            [ SERVICES & CAPABILITIES ]
           </span>
         </div>
 
         {/* Section Title */}
-        <div className="mb-16 sm:mb-20">
+        <div className="mb-14 sm:mb-16">
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-gray-900 leading-[1.05] max-w-5xl">
             Everything Your Brand Needs to Grow.
           </h2>
         </div>
 
-        {/* Interactive Services List */}
-        <div>
-          {services.map((service, index) => {
-            const isHovered = hoveredIndex === index
-            const isLast = index === services.length - 1
-            return (
-              <div
-                key={service.id}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                className={`group ${
-                  !isLast ? 'border-b border-gray-200' : ''
-                } py-8 sm:py-12 transition-all duration-300 cursor-pointer ${
-                  isHovered ? 'bg-gray-50/70 -mx-4 px-4 sm:-mx-8 sm:px-8' : ''
-                }`}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-                  {/* Bold Number (No slash) & Service Title */}
-                  <div className="lg:col-span-5 flex items-baseline gap-5 sm:gap-8">
-                    <span className="text-base sm:text-xl font-black font-mono text-black transition-transform duration-300 group-hover:scale-110">
+        {/* 3-Column Services Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="group bg-white border border-gray-200 flex flex-col justify-between transition-all duration-300 hover:border-black shadow-xs hover:shadow-md"
+            >
+              <div>
+                {/* Service Image */}
+                <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  {/* Service Number Tag */}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 text-xs font-mono font-bold bg-black text-white">
                       {service.id}
                     </span>
-                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors duration-200">
-                      {service.title}
-                    </h3>
-                  </div>
-
-                  {/* Description */}
-                  <div className="lg:col-span-5">
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Action Arrow Indicator */}
-                  <div className="lg:col-span-2 flex justify-start lg:justify-end items-center pt-1">
-                    <span className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-black group-hover:border-black group-hover:scale-110 transition-all duration-300">
-                      <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </span>
                   </div>
                 </div>
 
-                {/* Mobile Inline Preview on Touch / Small Screens */}
-                <div className="mt-4 lg:hidden">
-                  <div className="w-full max-w-[220px] aspect-[3/4] overflow-hidden bg-gray-100">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                {/* Card Content: Name & Expert Text */}
+                <div className="p-6 sm:p-8 space-y-3">
+                  <h3 className="text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
+                    {service.description}
+                  </p>
                 </div>
               </div>
-            )
-          })}
-        </div>
 
-  
+              {/* Card Footer: Button */}
+              <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
+                <Button
+                  href="#contact"
+                  variant="primary"
+                  size="sm"
+                  rounded="none"
+                  icon={FiArrowUpRight}
+                  className="w-full sm:w-auto"
+                >
+                  Explore Service
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

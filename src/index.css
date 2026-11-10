@@ -9,8 +9,8 @@
 
 @media (min-width: 768px) {
   .site-container {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 120px;
+    padding-right: 120px;
   }
 }
 
@@ -60,4 +60,8 @@
   display: flex;
   width: max-content;
   animation: marquee 25s linear infinite;
+}
+
+.font-anton {
+  font-family: 'Anton', sans-serif;
 }

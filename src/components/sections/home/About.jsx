@@ -1,5 +1,35 @@
+import { useEffect, useRef, useState } from 'react'
+import { animate, useInView } from 'framer-motion'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
+
+const Counter = ({ target, suffix = '', padZero = true, duration = 2 }) => {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, target, {
+        duration,
+        ease: [0.16, 1, 0.3, 1],
+        onUpdate: (latest) => {
+          setCount(Math.round(latest))
+        },
+      })
+      return () => controls.stop()
+    }
+  }, [isInView, target, duration])
+
+  const formattedCount = padZero && count < 10 ? `0${count}` : `${count}`
+
+  return (
+    <span ref={ref} className="tabular-nums font-anton">
+      {formattedCount}
+      {suffix}
+    </span>
+  )
+}
 
 const About = () => {
   return (
@@ -26,30 +56,32 @@ const About = () => {
               Ann's Clan is a multidisciplinary creative collective dedicated to transforming forward-thinking brands into market leaders. By fusing thoughtful design, strategic narrative, and modern engineering, we elevate ambitious brands with bespoke solutions that drive measurable, sustainable growth.
             </p>
 
-            {/* Numbering Stats from Design */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-4 pb-2 border-y border-gray-100">
-              <div>
-                <div className="text-2xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
-                  05+
+            {/* Numbering Stats: In between lines only */}
+            <div className="border-y border-gray-200 py-6 sm:py-8 my-6 sm:my-8">
+              <div className="grid grid-cols-3 gap-4 sm:gap-8">
+                <div>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
+                    05+
+                  </div>
+                  <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1.5">
+                    Core Services
+                  </div>
                 </div>
-                <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1">
-                  Core Services
+                <div>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
+                    08+
+                  </div>
+                  <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1.5">
+                    Featured Brands
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
-                  08+
-                </div>
-                <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1">
-                  Featured Brands
-                </div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
-                  360°
-                </div>
-                <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1">
-                  Creative Solutions
+                <div>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
+                    360°
+                  </div>
+                  <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1.5">
+                    Creative Solutions
+                  </div>
                 </div>
               </div>
             </div>
