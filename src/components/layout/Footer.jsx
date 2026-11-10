@@ -35,10 +35,7 @@ const Footer = () => {
             aria-label="Let's get started"
           >
             <h2 className="text-[clamp(1.85rem,7.5vw,8.5rem)] font-black uppercase tracking-tight text-white leading-none whitespace-nowrap transition-transform duration-500 group-hover:scale-[1.02]">
-              LET'S GET{' '}
-              <span className="text-stroke-white group-hover:text-white transition-colors duration-500">
-                STARTED
-              </span>
+              LET'S GET STARTED
             </h2>
           </a>
         </div>

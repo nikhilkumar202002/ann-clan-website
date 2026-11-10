@@ -66,6 +66,10 @@
   font-family: 'Anton', sans-serif;
 }
 
+.font-times {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .text-stroke-white {
   -webkit-text-stroke: 1.5px #ffffff;
   color: transparent;
