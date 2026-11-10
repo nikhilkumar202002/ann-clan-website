@@ -62,6 +62,8 @@ const Header = () => {
     }
   }, [isMenuOpen])
 
+  const isDark = !isScrolled && !isMenuOpen
+
   return (
     <>
       <header
@@ -74,14 +76,18 @@ const Header = () => {
         }`}
       >
         <div className="site-container">
-          <div className="flex items-center justify-between h-20 border-b border-gray-200">
-            {/* Left Side: Logo */}
+          <div
+            className={`flex items-center justify-between h-20 transition-colors duration-300 ${
+              isDark ? 'border-b border-white/15' : 'border-b border-gray-200'
+            }`}
+          >
+            {/* Left Side: Logo (white on dark hero, black on light/scrolled) */}
             <div className="flex-shrink-0">
               <a href="#" className="flex items-center" aria-label="Ann's Clan Home">
                 <img
-                  src="/logo/main-logo-black.png"
+                  src={isDark ? '/logo/main-logo-white.png' : '/logo/main-logo-black.png'}
                   alt="Ann's Clan"
-                  className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                  className="h-6 sm:h-7 md:h-8 w-auto object-contain transition-opacity duration-300"
                 />
               </a>
             </div>
@@ -96,19 +102,25 @@ const Header = () => {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="relative z-50 flex flex-col justify-center items-center w-11 h-11 rounded-full hover:bg-black/5 transition-colors focus:outline-none cursor-pointer"
+                className={`relative z-50 flex flex-col justify-center items-center w-11 h-11 rounded-full transition-colors focus:outline-none cursor-pointer ${
+                  isDark ? 'hover:bg-white/10' : 'hover:bg-black/5'
+                }`}
                 aria-label={isMenuOpen ? 'Close Menu' : 'Open Navigation Menu'}
                 aria-expanded={isMenuOpen}
               >
                 <div className="w-6 h-3 flex flex-col justify-between">
                   <span
-                    className={`block h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-in-out origin-center ${
-                      isMenuOpen ? 'translate-y-[5px] rotate-45' : 'translate-y-0 rotate-0'
+                    className={`block h-0.5 w-6 rounded-full transition-all duration-300 ease-in-out origin-center ${
+                      isDark ? 'bg-white' : 'bg-black'
+                    } ${
+                      isMenuOpen ? 'translate-y-[5px] rotate-45 !bg-black' : 'translate-y-0 rotate-0'
                     }`}
                   />
                   <span
-                    className={`block h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-in-out origin-center ${
-                      isMenuOpen ? '-translate-y-[5px] -rotate-45' : 'translate-y-0 rotate-0'
+                    className={`block h-0.5 w-6 rounded-full transition-all duration-300 ease-in-out origin-center ${
+                      isDark ? 'bg-white' : 'bg-black'
+                    } ${
+                      isMenuOpen ? '-translate-y-[5px] -rotate-45 !bg-black' : 'translate-y-0 rotate-0'
                     }`}
                   />
                 </div>
