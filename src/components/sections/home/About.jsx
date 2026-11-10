@@ -26,8 +26,42 @@ const About = () => {
               Ann's Clan is a multidisciplinary creative collective dedicated to transforming forward-thinking brands into market leaders. By fusing thoughtful design, strategic narrative, and modern engineering, we elevate ambitious brands with bespoke solutions that drive measurable, sustainable growth.
             </p>
 
-            <div>
-              <Button href="#services" variant="primary" icon={FiArrowUpRight}>
+            {/* Numbering Stats from Design */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-4 pb-2 border-y border-gray-100">
+              <div>
+                <div className="text-2xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
+                  05+
+                </div>
+                <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1">
+                  Core Services
+                </div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
+                  08+
+                </div>
+                <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1">
+                  Featured Brands
+                </div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-black">
+                  360°
+                </div>
+                <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1">
+                  Creative Solutions
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <Button
+                href="#services"
+                variant="primary"
+                size="lg"
+                rounded="none"
+                icon={FiArrowUpRight}
+              >
                 Discover Our Approach
               </Button>
             </div>
