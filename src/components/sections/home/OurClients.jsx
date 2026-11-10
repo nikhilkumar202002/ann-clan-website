@@ -43,7 +43,7 @@ const OurClients = () => {
           </h2>
         </div>
 
-        {/* Client Logos: Inside Grid Style */}
+        {/* Client Logos: Inside Grid Style with Actual Image Colors */}
         <div className="border border-white/15 bg-white/15 grid grid-cols-2 md:grid-cols-3 gap-px overflow-hidden">
           {clients.map((client) => (
             <div
@@ -54,7 +54,7 @@ const OurClients = () => {
                 src={client.logo}
                 alt={client.name}
                 title={client.name}
-                className="logo-white max-h-10 sm:max-h-14 max-w-[70%] sm:max-w-[65%] w-auto object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                className="max-h-12 sm:max-h-16 max-w-[75%] sm:max-w-[70%] w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
           ))}

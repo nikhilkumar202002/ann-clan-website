@@ -65,7 +65,3 @@
 .font-anton {
   font-family: 'Anton', sans-serif;
 }
-
-.logo-white {
-  filter: brightness(0) invert(1);
-}

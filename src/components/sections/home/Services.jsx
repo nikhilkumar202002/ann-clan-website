@@ -90,12 +90,9 @@ const Services = () => {
               {/* Card Content: Name & Expert Text */}
               <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between gap-3">
-                    <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors">
-                      {service.title}
-                    </h3>
-                    <FiArrowUpRight className="text-gray-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-xl shrink-0" />
-                  </div>
+                  <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors">
+                    {service.title}
+                  </h3>
                   <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal mt-3">
                     {service.description}
                   </p>
