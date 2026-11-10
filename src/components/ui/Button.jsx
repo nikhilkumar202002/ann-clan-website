@@ -1,3 +1,5 @@
+import FlipText from './FlipText'
+
 const Button = ({
   children,
   variant = 'primary',
@@ -11,6 +13,7 @@ const Button = ({
   className = '',
   disabled = false,
   glowing = false,
+  flipText = true,
   ...props
 }) => {
   const baseStyles =
@@ -20,6 +23,7 @@ const Button = ({
     primary: 'bg-black text-white hover:bg-gray-800 shadow-xs',
     secondary: 'bg-white text-black border border-gray-200 hover:bg-black hover:text-white hover:border-black',
     outline: 'border-2 border-black text-black hover:bg-black hover:text-white',
+    outlineWhite: 'border-2 border-white text-white hover:bg-white hover:text-black hover:border-white',
     link: 'text-black border-b-2 border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 rounded-none bg-transparent px-0 py-0',
     ghost: 'text-gray-500 hover:text-black bg-transparent px-0 py-0',
     dark: 'bg-gray-950 text-white hover:bg-white hover:text-gray-950 border border-gray-800',
@@ -60,7 +64,7 @@ const Button = ({
       {Icon && iconPosition === 'left' && (
         <Icon className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:-translate-x-0.5" />
       )}
-      <span>{children}</span>
+      {flipText ? <FlipText>{children}</FlipText> : <span>{children}</span>}
       {Icon && iconPosition === 'right' && (
         <Icon className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       )}
