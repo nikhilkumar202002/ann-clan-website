@@ -94,7 +94,17 @@ const Header = () => {
 
             {/* Right Side: CTA Button + 2-Line Hamburger Menu */}
             <div className="flex items-center gap-3 sm:gap-5">
-              <Button href="#contact" variant="primary" size="sm" glowing>
+              <Button
+                href="#contact"
+                variant={isDark ? 'secondary' : 'primary'}
+                size="sm"
+                rounded="none"
+                className={
+                  isDark
+                    ? 'bg-white text-black border-white hover:bg-transparent hover:text-white'
+                    : ''
+                }
+              >
                 Get in Touch
               </Button>
 

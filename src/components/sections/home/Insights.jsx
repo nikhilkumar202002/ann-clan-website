@@ -1,4 +1,4 @@
-import { FiArrowRight } from 'react-icons/fi'
+import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 
 const Insights = () => {
@@ -54,7 +54,7 @@ const Insights = () => {
             </h2>
           </div>
           <div>
-            <Button href="#" variant="link" icon={FiArrowRight}>
+            <Button href="#" variant="link" icon={FiArrowUpRight}>
               Explore All Articles
             </Button>
           </div>
@@ -105,7 +105,7 @@ const Insights = () => {
                 <span className="text-xs font-bold uppercase tracking-wider text-black group-hover:underline">
                   Read Article
                 </span>
-                <FiArrowRight className="w-4 h-4 text-gray-400 group-hover:text-black group-hover:translate-x-1 transition-all" />
+                <FiArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </div>
             </article>
           ))}
