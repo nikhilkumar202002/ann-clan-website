@@ -50,20 +50,19 @@ const Testimonials = () => {
   ]
 
   return (
-    <section id="testimonials" className="py-24 sm:py-32 bg-[#f9f8f6] border-t border-gray-200">
+    <section id="testimonials" className="py-24 sm:py-32 bg-black text-white border-t border-neutral-900">
       <div className="site-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           {/* ======================================================== */}
           {/* LEFT SIDE: ARCHITECTURAL & MATERIAL IMAGE */}
           {/* ======================================================== */}
           <div className="lg:col-span-5 flex">
-            <div className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[620px] overflow-hidden bg-stone-200 shadow-xs">
+            <div className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[620px] overflow-hidden bg-neutral-900 border border-neutral-800">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
                 alt="Tactile materials, architecture and natural light"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-stone-900/5 pointer-events-none" />
             </div>
           </div>
 
@@ -71,22 +70,19 @@ const Testimonials = () => {
           {/* RIGHT SIDE: HEADLINE & 2-COLUMN TESTIMONIALS */}
           {/* ======================================================== */}
           <div className="lg:col-span-7 flex flex-col justify-between py-2 sm:py-4">
-            {/* Header: Badge & Editorial Title */}
+            {/* Header: Badge & Unified Title */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#e55934]"></span>
-                <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
+                <span className="w-2.5 h-2.5 rounded-full bg-white"></span>
+                <span className="text-xs font-bold tracking-widest uppercase text-gray-400">
                   [ CLIENT TESTIMONIALS ]
                 </span>
               </div>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-gray-900 leading-[1.08] mb-12 sm:mb-16">
-                Real{' '}
-                <span className="font-times italic font-normal">collaboration.</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.08] mb-12 sm:mb-16">
+                Real collaboration.
                 <br />
-                Remarkable{' '}
-                <span className="font-times italic font-normal">results</span>
-                <span className="text-[#e55934]">.</span>
+                Remarkable results.
               </h2>
             </div>
 
@@ -101,15 +97,15 @@ const Testimonials = () => {
                 className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 pt-4"
               >
                 {/* Column 1 */}
-                <div className="flex flex-col justify-between space-y-6 md:pr-8 md:border-r md:border-gray-300/80">
+                <div className="flex flex-col justify-between space-y-6 md:pr-8 md:border-r md:border-neutral-800">
                   <div className="space-y-4">
-                    {/* Coral Quotation Mark */}
+                    {/* White Quotation Mark */}
                     <svg
                       width="24"
                       height="18"
                       viewBox="0 0 24 18"
                       fill="none"
-                      className="text-[#e55934] shrink-0"
+                      className="text-white shrink-0"
                       aria-hidden="true"
                     >
                       <path
@@ -117,17 +113,17 @@ const Testimonials = () => {
                         fill="currentColor"
                       />
                     </svg>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
+                    <p className="text-sm sm:text-base text-gray-300 leading-relaxed font-normal">
                       {currentPair[0].quote}
                     </p>
                   </div>
 
-                  <div className="space-y-6 pt-4 border-t border-gray-300/80">
+                  <div className="space-y-6 pt-4 border-t border-neutral-800">
                     <div>
-                      <h4 className="text-sm font-bold text-gray-900 tracking-tight">
+                      <h4 className="text-sm font-bold text-white tracking-tight">
                         {currentPair[0].author}
                       </h4>
-                      <p className="text-xs text-gray-500 mt-1">
+                      <p className="text-xs text-gray-400 mt-1">
                         {currentPair[0].role}
                       </p>
                     </div>
@@ -136,7 +132,7 @@ const Testimonials = () => {
                       type="button"
                       onClick={handlePrev}
                       aria-label="Previous testimonial"
-                      className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-black hover:text-white hover:border-black transition-all duration-300 group cursor-pointer"
+                      className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 group cursor-pointer"
                     >
                       <FiArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
                     </button>
@@ -146,13 +142,13 @@ const Testimonials = () => {
                 {/* Column 2 */}
                 <div className="flex flex-col justify-between space-y-6 md:pl-2">
                   <div className="space-y-4">
-                    {/* Coral Quotation Mark */}
+                    {/* White Quotation Mark */}
                     <svg
                       width="24"
                       height="18"
                       viewBox="0 0 24 18"
                       fill="none"
-                      className="text-[#e55934] shrink-0"
+                      className="text-white shrink-0"
                       aria-hidden="true"
                     >
                       <path
@@ -160,17 +156,17 @@ const Testimonials = () => {
                         fill="currentColor"
                       />
                     </svg>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
+                    <p className="text-sm sm:text-base text-gray-300 leading-relaxed font-normal">
                       {currentPair[1].quote}
                     </p>
                   </div>
 
-                  <div className="space-y-6 pt-4 border-t border-gray-300/80">
+                  <div className="space-y-6 pt-4 border-t border-neutral-800">
                     <div>
-                      <h4 className="text-sm font-bold text-gray-900 tracking-tight">
+                      <h4 className="text-sm font-bold text-white tracking-tight">
                         {currentPair[1].author}
                       </h4>
-                      <p className="text-xs text-gray-500 mt-1">
+                      <p className="text-xs text-gray-400 mt-1">
                         {currentPair[1].role}
                       </p>
                     </div>
@@ -179,7 +175,7 @@ const Testimonials = () => {
                       type="button"
                       onClick={handleNext}
                       aria-label="Next testimonial"
-                      className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-black hover:text-white hover:border-black transition-all duration-300 group cursor-pointer"
+                      className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 group cursor-pointer"
                     >
                       <FiArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                     </button>
