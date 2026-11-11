@@ -1,6 +1,7 @@
 import CommonBanner from '../components/ui/CommonBanner'
 import WhoWeAre from '../components/sections/aboutus/WhoWeAre'
 import WhatDrivesUs from '../components/sections/aboutus/3GridLayout'
+import OurExpertise from '../components/sections/aboutus/OurExpertise'
 import Team from '../components/sections/home/Team'
 
 const AboutUs = () => {
@@ -20,6 +21,7 @@ const AboutUs = () => {
       />
       <WhoWeAre />
       <WhatDrivesUs />
+      <OurExpertise />
       <Team />
     </>
   )
