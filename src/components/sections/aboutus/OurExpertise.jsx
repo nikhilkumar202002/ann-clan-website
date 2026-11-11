@@ -68,15 +68,12 @@ const OurExpertise = () => {
           </div>
 
           {/* Section Heading: Strictly 2 lines, formal 35-40px */}
-          <h2 className="section-heading text-gray-900 mb-6">
+          <h2 className="section-heading text-gray-900 mb-4">
             EVERYTHING YOUR BRAND <br />
             NEEDS TO GROW.
           </h2>
 
-          {/* Section Subtitle */}
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal max-w-2xl">
-            We bring different creative and digital capabilities together to help brands communicate, connect and grow.
-          </p>
+          
         </motion.div>
 
         {/* ======================================================== */}
