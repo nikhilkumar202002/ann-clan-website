@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../ui/Button'
 import { navRoutes } from '../../routes/navRoutes'
 
 const Header = () => {
+  const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
@@ -55,7 +56,8 @@ const Header = () => {
     }
   }, [isMenuOpen])
 
-  const isDark = !isScrolled && !isMenuOpen
+  const isLightPage = location.pathname === '/privacy-policy'
+  const isDark = !isLightPage && !isScrolled && !isMenuOpen
 
   return (
     <>
@@ -64,7 +66,9 @@ const Header = () => {
           isVisible || isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
         } ${
           isScrolled && !isMenuOpen
-            ? 'bg-white/90 backdrop-blur-md'
+            ? 'bg-white/90 backdrop-blur-md shadow-xs'
+            : isLightPage && !isMenuOpen
+            ? 'bg-white/95 backdrop-blur-md'
             : 'bg-transparent'
         }`}
       >

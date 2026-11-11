@@ -5,6 +5,7 @@ import ServicesPage from '../pages/ServicesPage'
 import OurWorkPage from '../pages/OurWorkPage'
 import InsightsPage from '../pages/InsightsPage'
 import ContactPage from '../pages/ContactPage'
+import PrivacyPolicy from '../pages/PrivacyPolicy'
 
 const Routes = () => {
   return (
@@ -15,6 +16,7 @@ const Routes = () => {
       <Route path="/our-work" element={<OurWorkPage />} />
       <Route path="/insights" element={<InsightsPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="*" element={<Homepage />} />
     </RouterRoutes>
   )
