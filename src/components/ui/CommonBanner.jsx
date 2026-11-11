@@ -103,7 +103,7 @@ const renderAnimatedWords = (node, itemVariants, prefix = 'w') => {
 }
 
 const CommonBanner = ({
-  badge = '[ ABOUT US ]',
+  badge = '',
   title = 'WHO WE ARE & WHAT WE DO.',
   description = '',
   bgImage,
