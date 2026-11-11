@@ -118,7 +118,7 @@ const CommonBanner = ({
 
   return (
     <section
-      className={`relative min-h-[80vh] flex flex-col justify-center bg-black text-white overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 border-b border-white/10 ${className}`}
+      className={`relative min-h-[80vh] flex flex-col justify-center bg-black text-white overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 ${className}`}
     >
       {/* Background Media: Video, Image, or Ambient Dark Backdrop */}
       <motion.div

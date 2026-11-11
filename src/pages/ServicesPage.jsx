@@ -1,5 +1,5 @@
 import CommonBanner from '../components/ui/CommonBanner'
-import Services from '../components/sections/home/Services'
+import ServicePageCard from '../components/sections/service/ServicePageCard'
 import Process from '../components/sections/home/Process'
 
 const ServicesPage = () => {
@@ -8,6 +8,7 @@ const ServicesPage = () => {
       <CommonBanner
         align="center"
         bgImage="/banners/service-page-background.jpg"
+        overlayClassName=""
         badge="[ WHAT WE DO ]"
         title={
           <>
@@ -16,7 +17,7 @@ const ServicesPage = () => {
           </>
         }
       />
-      <Services />
+      <ServicePageCard />
       <Process />
     </>
   )
