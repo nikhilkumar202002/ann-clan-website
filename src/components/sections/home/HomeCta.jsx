@@ -9,7 +9,13 @@ const HomeCta = () => {
       className="relative min-h-[540px] sm:min-h-[580px] lg:min-h-[680px] flex items-center justify-center overflow-hidden bg-black py-24 sm:py-32"
     >
       {/* Background Video */}
-      <div className="absolute inset-0 z-0">
+      <motion.div
+        initial={{ opacity: 0, scale: 1.04 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute inset-0 z-0"
+      >
         <video
           autoPlay
           loop
@@ -21,7 +27,7 @@ const HomeCta = () => {
         </video>
         {/* Cinematic dark scrim overlay */}
         <div className="absolute inset-0 bg-black/65" />
-      </div>
+      </motion.div>
 
       {/* Content Container */}
       <div className="site-container relative z-10 text-center">

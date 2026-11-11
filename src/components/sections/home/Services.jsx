@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 
@@ -57,7 +58,13 @@ const Services = () => {
     <section id="services" className="py-24 sm:py-32 bg-white border-t border-gray-100">
       <div className="site-container">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-14 sm:mb-16"
+        >
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
             <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
@@ -68,15 +75,24 @@ const Services = () => {
           <h2 className="section-heading text-gray-900">
             Everything Your Brand Needs to Grow.
           </h2>
-        </div>
+        </motion.div>
 
         {/* 3-Column Services Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {services.map((service) => (
-            <a
+          {services.map((service, index) => (
+            <motion.a
               key={service.id}
               href="#contact"
-              className="group bg-white border border-gray-200 flex flex-col overflow-hidden transition-all duration-300 hover:shadow-md"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.08,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              whileHover={{ y: -6 }}
+              className="group bg-white border border-gray-200 flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg"
             >
               {/* Service Image */}
               <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
@@ -98,12 +114,18 @@ const Services = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </motion.a>
           ))}
         </div>
 
         {/* Bottom CTA for All Services */}
-        <div className="mt-12 sm:mt-16 flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-12 sm:mt-16 flex justify-center"
+        >
           <Button
             href="#contact"
             variant="primary"
@@ -113,7 +135,7 @@ const Services = () => {
           >
             View All Services
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

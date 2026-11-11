@@ -57,7 +57,13 @@ const Team = () => {
           {/* ======================================================== */}
           {/* LEFT SIDE: TOP-TO-BOTTOM IMAGE SLIDER */}
           {/* ======================================================== */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 order-2 lg:order-1"
+          >
             <div className="relative aspect-[4/5] w-full max-w-lg mx-auto overflow-hidden bg-gray-100 shadow-sm border border-gray-200">
               <AnimatePresence initial={false}>
                 <motion.img
@@ -72,14 +78,19 @@ const Team = () => {
                 />
               </AnimatePresence>
             </div>
-          </div>
+          </motion.div>
 
           {/* ======================================================== */}
           {/* RIGHT SIDE: ONE FOUNDER DETAIL AT A TIME */}
           {/* ======================================================== */}
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-8">
             {/* Header: Badge, Headline & Description */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            >
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
                 <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
@@ -94,7 +105,7 @@ const Team = () => {
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal mt-5 max-w-2xl">
                 Great ideas are driven by great people. Meet the leadership team shaping the vision, creativity and growth of ANTS CLAN.
               </p>
-            </div>
+            </motion.div>
 
             {/* Active Leader Details (Only ONE at a time, no numbering/dots) */}
             <div className="pt-6 border-t border-gray-200 min-h-[200px]">

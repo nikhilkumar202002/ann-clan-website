@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { FiInstagram, FiLinkedin, FiFacebook, FiYoutube, FiArrowUpRight } from 'react-icons/fi'
 import Button from '../ui/Button'
 
@@ -26,7 +27,13 @@ const Footer = () => {
     <footer className="bg-black text-gray-300 border-t border-white/10 overflow-hidden">
 
       <section className="py-8 sm:py-15 lg:py-20 border-b border-white/10 overflow-hidden bg-black">
-        <div className="site-container text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="site-container text-center"
+        >
           <a
             href="#contact"
             className="group inline-block"
@@ -36,14 +43,20 @@ const Footer = () => {
               LET'S GET STARTED
             </h2>
           </a>
-        </div>
+        </motion.div>
       </section>
 
       {/* ======================================================== */}
       {/* LOWER FOOTER: NAVIGATION & INFO */}
       {/* ======================================================== */}
       <div className="site-container py-16 sm:py-20 bg-black">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12"
+        >
           {/* Brand info (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
             <a href="#" className="inline-block" aria-label="Ann's Clan Home">
@@ -172,7 +185,7 @@ const Footer = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom copyright bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-4 sm:space-y-0">

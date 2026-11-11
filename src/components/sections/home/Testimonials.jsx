@@ -56,7 +56,13 @@ const Testimonials = () => {
           {/* ======================================================== */}
           {/* LEFT SIDE: ARCHITECTURAL & MATERIAL IMAGE */}
           {/* ======================================================== */}
-          <div className="lg:col-span-5 flex">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex"
+          >
             <div className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[620px] overflow-hidden bg-neutral-900 border border-neutral-800">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
@@ -64,14 +70,19 @@ const Testimonials = () => {
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* ======================================================== */}
           {/* RIGHT SIDE: HEADLINE & 2-COLUMN TESTIMONIALS */}
           {/* ======================================================== */}
           <div className="lg:col-span-7 flex flex-col justify-between py-2 sm:py-4">
             {/* Header: Badge & Unified Title */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            >
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-2.5 h-2.5 rounded-full bg-white"></span>
                 <span className="text-xs font-bold tracking-widest uppercase text-gray-400">
@@ -84,7 +95,7 @@ const Testimonials = () => {
                 <br />
                 Remarkable results.
               </h2>
-            </div>
+            </motion.div>
 
             {/* Testimonials 2-Column Grid */}
             <AnimatePresence mode="wait">

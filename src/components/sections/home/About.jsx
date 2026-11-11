@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { animate, useInView } from 'framer-motion'
+import { motion, animate, useInView } from 'framer-motion'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 
@@ -37,8 +37,13 @@ const About = () => {
       <div className="site-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
          
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-         
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-6 sm:space-y-8"
+          >
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
               <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
@@ -97,10 +102,15 @@ const About = () => {
                 Discover Our Approach
               </Button>
             </div>
-          </div>
+          </motion.div>
 
-         
-          <div className="lg:col-span-5">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5"
+          >
             <div className="relative aspect-[4/5] max-h-[620px] w-full overflow-hidden bg-gray-100">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
@@ -108,7 +118,7 @@ const About = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

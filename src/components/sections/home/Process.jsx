@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const Process = () => {
   const steps = [
     {
@@ -27,7 +29,13 @@ const Process = () => {
       {/* ======================================================== */}
       {/* SECTION HEADING: CONFINED TO CONTAINER */}
       {/* ======================================================== */}
-      <div className="site-container mb-16 sm:mb-24">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="site-container mb-16 sm:mb-24"
+      >
         <div className="flex items-center gap-3 mb-6">
           <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
           <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
@@ -38,20 +46,30 @@ const Process = () => {
         <h2 className="section-heading text-gray-900 max-w-4xl">
           FROM IDEA TO IMPACT.
         </h2>
-      </div>
+      </motion.div>
 
       {/* ======================================================== */}
       {/* PROCESS DIAGRAM: FULL WIDTH (OUTSIDE CONTAINER) */}
       {/* ======================================================== */}
       <div className="relative w-full">
         {/* Continuous Horizontal Connecting Line (Desktop) */}
-        <div
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ transformOrigin: 'left center' }}
           className="hidden md:block absolute top-10 sm:top-12 lg:top-14 left-0 right-0 h-[2px] bg-gray-200 z-0"
           aria-hidden="true"
         />
 
         {/* Continuous Vertical Connecting Line (Mobile) */}
-        <div
+        <motion.div
+          initial={{ scaleY: 0 }}
+          whileInView={{ scaleY: 1 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ transformOrigin: 'top center' }}
           className="md:hidden absolute top-10 bottom-10 left-[43px] w-[2px] bg-gray-200 z-0"
           aria-hidden="true"
         />
@@ -59,9 +77,17 @@ const Process = () => {
         {/* Process Steps Grid: Edge-to-Edge Fluid Padding */}
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 lg:gap-12 relative z-10">
-            {steps.map((item) => (
-              <div
+            {steps.map((item, index) => (
+              <motion.div
                 key={item.step}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.15,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
                 className="group flex flex-row md:flex-col items-start gap-6 md:gap-0"
               >
                 {/* Circle Node with Number */}
@@ -82,7 +108,7 @@ const Process = () => {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

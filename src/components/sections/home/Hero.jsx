@@ -170,22 +170,35 @@ const Hero = () => {
           </motion.div>
 
           {/* Main Heading: Word-by-word smooth fade */}
-          <h1 className="text-[11vw] sm:text-[9.5vw] md:text-[8vw] lg:text-[7.2vw] xl:text-[110px] 2xl:text-[132px] font-black uppercase tracking-tight leading-[0.92] text-white select-none drop-shadow-lg">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl font-black uppercase tracking-tight leading-[1.05] text-white select-none drop-shadow-lg">
             <motion.span
               variants={headingWordContainer}
               initial="hidden"
               animate="visible"
-              className="inline-flex flex-wrap justify-center gap-x-[0.26em]"
+              className="flex flex-col items-center justify-center"
             >
-              {['WE', 'GROW', 'YOUR', 'BRAND.'].map((word) => (
-                <motion.span
-                  key={word}
-                  variants={headingWordItem}
-                  className="inline-block"
-                >
-                  {word}
-                </motion.span>
-              ))}
+              <span className="inline-flex justify-center gap-x-[0.26em]">
+                {['WE', 'GROW'].map((word) => (
+                  <motion.span
+                    key={word}
+                    variants={headingWordItem}
+                    className="inline-block"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </span>
+              <span className="inline-flex justify-center gap-x-[0.26em]">
+                {['YOUR', 'BRAND.'].map((word) => (
+                  <motion.span
+                    key={word}
+                    variants={headingWordItem}
+                    className="inline-block"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </span>
             </motion.span>
           </h1>
 
