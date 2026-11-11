@@ -6,14 +6,15 @@ const ServicesPage = () => {
   return (
     <>
       <CommonBanner
+        align="center"
+        bgImage="/banners/service-page-background.jpg"
         badge="[ WHAT WE DO ]"
         title={
           <>
-            CAPABILITIES THAT SCALE <br className="hidden sm:inline" />
-            YOUR BRAND.
+            CREATIVE SOLUTIONS. <br className="hidden sm:inline" />
+            MEANINGFUL IMPACT.
           </>
         }
-        description="From high-impact public relations and digital performance marketing to bespoke web engineering and cinematic media production."
       />
       <Services />
       <Process />
@@ -22,4 +23,3 @@ const ServicesPage = () => {
 }
 
 export default ServicesPage
-
