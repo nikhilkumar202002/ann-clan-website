@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const CommonBanner = ({
   badge = '[ ABOUT US ]',
   title = 'WHO WE ARE & WHAT WE DO.',
-  description = 'We are a creative collective of storytellers, designers, and digital strategists shaping the future of brand engagement.',
+  description = '',
   bgImage,
   videoSrc,
   overlayClassName = 'bg-gradient-to-t from-black via-black/70 to-black/80',

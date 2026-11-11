@@ -16,6 +16,10 @@ const CommonCta = ({
   buttonHref = '#contact',
   buttonVariant = 'secondary',
   buttonIcon = FiArrowUpRight,
+  secondaryButtonText,
+  secondaryButtonHref = '/our-work',
+  secondaryButtonVariant = 'outlineWhite',
+  secondaryButtonIcon = FiArrowUpRight,
   videoSrc = '/video/cta-home-video.mp4',
   imageSrc,
   overlayClassName = 'bg-black/65',
@@ -95,7 +99,7 @@ const CommonCta = ({
             <div className="mt-8 sm:mt-12">{children}</div>
           ) : (
             buttonText && (
-              <div className="mt-8 sm:mt-12">
+              <div className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
                 <Button
                   href={buttonHref}
                   variant={buttonVariant}
@@ -105,6 +109,17 @@ const CommonCta = ({
                 >
                   {buttonText}
                 </Button>
+                {secondaryButtonText && (
+                  <Button
+                    href={secondaryButtonHref}
+                    variant={secondaryButtonVariant}
+                    size="lg"
+                    rounded="none"
+                    icon={secondaryButtonIcon}
+                  >
+                    {secondaryButtonText}
+                  </Button>
+                )}
               </div>
             )
           )}

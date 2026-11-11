@@ -2,7 +2,10 @@ import CommonBanner from '../components/ui/CommonBanner'
 import WhoWeAre from '../components/sections/aboutus/WhoWeAre'
 import WhatDrivesUs from '../components/sections/aboutus/3GridLayout'
 import OurExpertise from '../components/sections/aboutus/OurExpertise'
+import OurApproach from '../components/sections/aboutus/OurApproach'
 import Team from '../components/sections/home/Team'
+import OurClients from '../components/sections/home/OurClients'
+import CommonCta from '../components/ui/CommonCta'
 
 const AboutUs = () => {
   return (
@@ -17,12 +20,29 @@ const AboutUs = () => {
             INTO IMPACT.
           </>
         }
-        description="We are ANTS CLAN — a creative media company driven by ideas, storytelling and innovation. We help brands find their voice, connect with their audience and grow through meaningful creative experiences."
+       
       />
       <WhoWeAre />
       <WhatDrivesUs />
       <OurExpertise />
+      <OurApproach />
+      <OurClients />
       <Team />
+      <CommonCta
+        id="about-cta"
+        badge="[ GET IN TOUCH ]"
+        title={
+          <>
+            YOUR NEXT BIG IDEA <br />
+            STARTS HERE.
+          </>
+        }
+        description="Have a brand to build, a story to tell or an idea waiting to happen? Let's create something meaningful together."
+        buttonText="START A PROJECT"
+        buttonHref="/contact"
+        secondaryButtonText="EXPLORE OUR WORK"
+        secondaryButtonHref="/our-work"
+      />
     </>
   )
 }
