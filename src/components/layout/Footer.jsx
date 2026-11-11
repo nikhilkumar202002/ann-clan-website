@@ -58,25 +58,40 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3 pt-2">
               <a
-                href="#"
-                aria-label="Twitter / X"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="w-10 h-10 bg-black border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
               >
-                <FiTwitter className="w-4 h-4" />
+                <FiInstagram className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="w-10 h-10 bg-black border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
               >
                 <FiLinkedin className="w-4 h-4" />
               </a>
               <a
-                href="#"
-                aria-label="Instagram"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="w-10 h-10 bg-black border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
               >
-                <FiInstagram className="w-4 h-4" />
+                <FiFacebook className="w-4 h-4" />
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="w-10 h-10 bg-black border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
+              >
+                <FiYoutube className="w-4 h-4" />
               </a>
             </div>
           </div>
