@@ -190,9 +190,13 @@ const Footer = () => {
             <a href="#" className="hover:text-gray-400 transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="hover:text-gray-400 transition-colors">
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event('openCookieSettings'))}
+              className="hover:text-gray-400 transition-colors cursor-pointer"
+            >
               Cookie Settings
-            </a>
+            </button>
           </div>
         </div>
       </div>
