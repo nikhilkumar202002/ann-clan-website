@@ -73,7 +73,8 @@ const Services = () => {
           </div>
 
           <h2 className="section-heading text-gray-900">
-            Everything Your Brand Needs to Grow.
+            Everything Your Brand <br />
+            Needs to Grow.
           </h2>
         </motion.div>
 
