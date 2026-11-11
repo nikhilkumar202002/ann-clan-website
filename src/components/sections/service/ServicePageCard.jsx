@@ -159,13 +159,17 @@ const ServicePageCard = () => {
               className="group bg-white border border-gray-200 flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-black h-full"
             >
               {/* Service Image */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+              <Link
+                to={service.path}
+                className="block relative aspect-[16/10] overflow-hidden bg-gray-100"
+                aria-label={`View ${service.title}`}
+              >
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-              </div>
+              </Link>
 
               {/* Card Content Area */}
               <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
@@ -204,7 +208,7 @@ const ServicePageCard = () => {
                 {/* Bottom CTA Action Button */}
                 <div className="pt-6 mt-6 border-t border-gray-100">
                   <Button
-                    href="/contact"
+                    href={service.path}
                     variant="primary"
                     size="md"
                     rounded="none"
