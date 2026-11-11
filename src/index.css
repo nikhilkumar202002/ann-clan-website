@@ -29,41 +29,27 @@
 }
 
 /* ======================================================== */
-/* CORPORATE UNIFIED MAIN HEADING FONT-SIZE PRINCIPLE */
+/* CORPORATE UNIFIED MAIN HEADING FONT-SIZE (FORMAL 35-40PX) */
 /* ======================================================== */
 .section-heading {
-  font-size: 2rem;
-  line-height: 1.08;
+  font-size: 1.75rem; /* 28px on mobile */
+  line-height: 1.15;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.03em;
-}
-
-@media (min-width: 640px) {
-  .section-heading {
-    font-size: 2.75rem;
-    line-height: 1.05;
-  }
+  letter-spacing: -0.02em;
 }
 
 @media (min-width: 768px) {
   .section-heading {
-    font-size: 3.25rem;
-    line-height: 1.05;
+    font-size: 2.1875rem; /* 35px on tablet */
+    line-height: 1.12;
   }
 }
 
 @media (min-width: 1024px) {
   .section-heading {
-    font-size: 3.75rem;
-    line-height: 1.04;
-  }
-}
-
-@media (min-width: 1400px) {
-  .section-heading {
-    font-size: 4.25rem;
-    line-height: 1.04;
+    font-size: 2.5rem; /* 40px on desktop */
+    line-height: 1.1;
   }
 }
 

@@ -6,7 +6,7 @@ const HomeCta = () => {
   return (
     <section
       id="home-cta"
-      className="relative min-h-[600px] sm:min-h-[680px] lg:min-h-[740px] flex items-center justify-center overflow-hidden bg-black py-24 sm:py-32"
+      className="relative min-h-[540px] sm:min-h-[580px] lg:min-h-[680px] flex items-center justify-center overflow-hidden bg-black py-24 sm:py-32"
     >
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
@@ -30,7 +30,7 @@ const HomeCta = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-5xl mx-auto flex flex-col items-center"
+          className="max-w-6xl mx-auto flex flex-col items-center"
         >
           {/* Badge */}
           <div className="flex items-center gap-3 mb-6 sm:mb-8">
@@ -41,8 +41,9 @@ const HomeCta = () => {
           </div>
 
           {/* Headline */}
-          <h2 className="section-heading text-white">
-            LET'S MAKE YOUR BRAND IMPOSSIBLE TO IGNORE.
+          <h2 className="text-3xl min-[400px]:text-3xl sm:text-4xl md:text-6xl lg:text-5xl xl:text-6xl font-black uppercase tracking-tight text-white leading-[1.04]">
+            LET'S MAKE YOUR BRAND <br className="hidden sm:inline" />
+            IMPOSSIBLE TO IGNORE.
           </h2>
 
           {/* Description */}
