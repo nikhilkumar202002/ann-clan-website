@@ -1,35 +1,23 @@
 import CommonBanner from '../components/ui/CommonBanner'
-import CommonCta from '../components/ui/CommonCta'
+import Contact from '../components/sections/contact/Contact'
 
 const ContactPage = () => {
   return (
     <>
       <CommonBanner
-        badge="[ GET IN TOUCH ]"
+        align="center"
+        bgImage="/banners/contact-us-banner.jpg"
+        badge="[ LET'S CONNECT ]"
         title={
           <>
-            LET'S START A <br className="hidden sm:inline" />
-            CONVERSATION.
+            HAVE A STORY TO TELL? <br className="hidden sm:inline" />
+            LET'S MAKE IT HAPPEN.
           </>
         }
-        description="Have a brief, an ambitious project, or an inquiry? We would love to hear from you."
       />
-      <CommonCta
-        id="contact-cta"
-        badge="[ REACH OUT DIRECTLY ]"
-        title={
-          <>
-            READY TO BUILD <br />
-            SOMETHING ICONIC?
-          </>
-        }
-        description="Write to us at contact@antsclan.com or connect with our studio."
-        buttonText="EMAIL US"
-        buttonHref="mailto:contact@antsclan.com"
-      />
+      <Contact />
     </>
   )
 }
 
 export default ContactPage
-
