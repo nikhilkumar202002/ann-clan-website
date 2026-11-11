@@ -53,24 +53,14 @@ const Process = () => {
       {/* ======================================================== */}
       <div className="relative w-full">
         {/* Continuous Horizontal Connecting Line (Desktop) */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          style={{ transformOrigin: 'left center' }}
-          className="hidden md:block absolute top-10 sm:top-12 lg:top-14 left-0 right-0 h-[2px] bg-gray-200 z-0"
+        <div
+          className="hidden md:block absolute top-12 lg:top-14 left-0 right-0 h-[2px] bg-black z-0 pointer-events-none"
           aria-hidden="true"
         />
 
         {/* Continuous Vertical Connecting Line (Mobile) */}
-        <motion.div
-          initial={{ scaleY: 0 }}
-          whileInView={{ scaleY: 1 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          style={{ transformOrigin: 'top center' }}
-          className="md:hidden absolute top-10 bottom-10 left-[43px] w-[2px] bg-gray-200 z-0"
+        <div
+          className="md:hidden absolute top-10 bottom-10 left-[63px] sm:left-[95px] w-[2px] bg-black z-0 pointer-events-none"
           aria-hidden="true"
         />
 
