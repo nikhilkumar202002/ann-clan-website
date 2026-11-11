@@ -56,7 +56,7 @@ const Footer = () => {
               />
             </a>
             <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
-              Ann's Clan is a multidisciplinary creative collective dedicated to transforming forward-thinking brands into market leaders through media, marketing, and technology.
+              We create meaningful digital experiences, strategic branding and modern web solutions designed to elevate your vision.
             </p>
             <div className="flex space-x-3 pt-2">
               <a
