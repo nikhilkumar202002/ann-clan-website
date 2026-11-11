@@ -1,18 +1,11 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { FiInstagram, FiLinkedin, FiFacebook, FiYoutube, FiArrowUpRight } from 'react-icons/fi'
 import Button from '../ui/Button'
+import { navRoutes } from '../../routes/navRoutes'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
-
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Our Work', href: '#our-work' },
-    { name: 'Insights', href: '#insights' },
-    { name: 'Contact', href: '#contact' },
-  ]
 
   const serviceLinks = [
     { name: 'Public Relations', href: '#services' },
@@ -34,15 +27,15 @@ const Footer = () => {
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
           className="site-container text-center"
         >
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="group inline-block"
             aria-label="Let's get started"
           >
             <h2 className="text-[clamp(1.85rem,7.5vw,8.5rem)] font-black uppercase tracking-tight text-white leading-none whitespace-nowrap transition-transform duration-500 group-hover:scale-[1.02]">
               LET'S GET STARTED
             </h2>
-          </a>
+          </Link>
         </motion.div>
       </section>
 
@@ -59,13 +52,13 @@ const Footer = () => {
         >
           {/* Brand info (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
-            <a href="#" className="inline-block" aria-label="Ann's Clan Home">
+            <Link to="/" className="inline-block" aria-label="Ann's Clan Home">
               <img
                 src="/logo/main-logo-white.png"
                 alt="Ann's Clan"
                 className="h-9 w-auto object-contain"
               />
-            </a>
+            </Link>
             <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
               We create meaningful digital experiences, strategic branding and modern web solutions designed to elevate your vision.
             </p>
@@ -115,14 +108,14 @@ const Footer = () => {
               Navigation
             </h4>
             <ul className="space-y-3 text-sm">
-              {navLinks.map((link) => (
+              {navRoutes.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.path}
                     className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -176,7 +169,7 @@ const Footer = () => {
 
             <div className="pt-2">
               <Button
-                href="#contact"
+                href="/contact"
                 variant="ghostWhite"
                 size="md"
                 icon={FiArrowUpRight}

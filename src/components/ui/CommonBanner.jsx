@@ -7,7 +7,7 @@ const CommonBanner = ({
   bgImage,
   videoSrc,
   overlayClassName = 'bg-gradient-to-t from-black via-black/70 to-black/80',
-  align = 'left',
+  align = 'center',
   breadcrumb,
   className = '',
   children,
@@ -16,7 +16,7 @@ const CommonBanner = ({
 
   return (
     <section
-      className={`relative min-h-[70vh] flex flex-col justify-center bg-black text-white overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 border-b border-white/10 ${className}`}
+      className={`relative min-h-[80vh] flex flex-col justify-center bg-black text-white overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 border-b border-white/10 ${className}`}
     >
       {/* Background Media: Video, Image, or Default Atmospheric Dark Ambient */}
       <motion.div
@@ -98,7 +98,7 @@ const CommonBanner = ({
 
           {/* Description */}
           {description && (
-            <p className="mt-5 sm:mt-7 text-base sm:text-lg md:text-xl text-gray-300 font-normal leading-relaxed max-w-2xl">
+            <p className={`mt-5 sm:mt-7 text-base sm:text-lg md:text-xl text-gray-300 font-normal leading-relaxed max-w-2xl ${isCentered ? 'text-center mx-auto' : ''}`}>
               {description}
             </p>
           )}

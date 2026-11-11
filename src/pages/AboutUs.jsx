@@ -1,4 +1,6 @@
 import CommonBanner from '../components/ui/CommonBanner'
+import About from '../components/sections/home/About'
+import Team from '../components/sections/home/Team'
 
 const AboutUs = () => {
   return (
@@ -7,16 +9,14 @@ const AboutUs = () => {
         badge="[ ABOUT ANTS CLAN ]"
         title={
           <>
-            TURNING AMBITIOUS IDEAS <br className="hidden sm:inline" />
-            INTO LASTING IMPACT.
+            WE TURN IDEAS <br className="hidden sm:inline" />
+            INTO IMPACT.
           </>
         }
-        description="We are a multidisciplinary creative collective dedicated to transforming brands through strategic storytelling, cinematic production, and cutting-edge digital experiences."
-        breadcrumb={[
-          { label: 'Home', href: '/' },
-          { label: 'About Us' },
-        ]}
+        description="We are ANTS CLAN — a creative media company driven by ideas, storytelling and innovation. We help brands find their voice, connect with their audience and grow through meaningful creative experiences."
       />
+      <About />
+      <Team />
     </>
   )
 }

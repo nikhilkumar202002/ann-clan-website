@@ -1,11 +1,5 @@
-const navItems = [
-  { name: 'Home', href: '#' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Our Work', href: '#our-work' },
-  { name: 'Insights', href: '#insights' },
-  { name: 'Contact', href: '#contact' },
-]
+import { NavLink } from 'react-router-dom'
+import { navRoutes } from '../../routes/navRoutes'
 
 const Navigation = ({ className = '', mobile = false, onItemClick }) => {
   return (
@@ -13,19 +7,25 @@ const Navigation = ({ className = '', mobile = false, onItemClick }) => {
       <ul
         className={
           mobile
-            ? 'flex flex-col space-y-4 text-base font-medium text-gray-700'
-            : 'flex items-center space-x-8 text-sm font-medium text-gray-700'
+            ? 'flex flex-col space-y-4 text-base font-bold uppercase tracking-wider text-gray-700'
+            : 'flex items-center space-x-8 text-xs font-bold uppercase tracking-wider text-gray-700'
         }
       >
-        {navItems.map((item) => (
+        {navRoutes.map((item) => (
           <li key={item.name}>
-            <a
-              href={item.href}
+            <NavLink
+              to={item.path}
               onClick={onItemClick}
-              className="text-gray-600 hover:text-black transition-colors duration-200"
+              className={({ isActive }) =>
+                `transition-colors duration-200 ${
+                  isActive
+                    ? 'text-black font-extrabold'
+                    : 'text-gray-500 hover:text-black'
+                }`
+              }
             >
               {item.name}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>

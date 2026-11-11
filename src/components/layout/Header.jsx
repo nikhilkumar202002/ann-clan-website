@@ -1,21 +1,14 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../ui/Button'
+import { navRoutes } from '../../routes/navRoutes'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
-
-  const navItems = [
-    { number: '01', name: 'Home', href: '#home' },
-    { number: '02', name: 'About', href: '#about' },
-    { number: '03', name: 'Services', href: '#services' },
-    { number: '04', name: 'Our Work', href: '#our-work' },
-    { number: '05', name: 'Insights', href: '#insights' },
-    { number: '06', name: 'Contact', href: '#contact' },
-  ]
 
   // Handle scroll detection: transparent at top, hide on scroll down, fade in when scrolling up (to top)
   useEffect(() => {
@@ -83,19 +76,19 @@ const Header = () => {
           >
             {/* Left Side: Logo (white on dark hero, black on light/scrolled) */}
             <div className="flex-shrink-0">
-              <a href="#" className="flex items-center" aria-label="Ann's Clan Home">
+              <Link to="/" className="flex items-center" aria-label="Ann's Clan Home">
                 <img
                   src={isDark ? '/logo/main-logo-white.png' : '/logo/main-logo-black.png'}
                   alt="Ann's Clan"
                   className="h-6 sm:h-7 md:h-8 w-auto object-contain transition-opacity duration-300"
                 />
-              </a>
+              </Link>
             </div>
 
             {/* Right Side: CTA Button + 2-Line Hamburger Menu */}
             <div className="flex items-center gap-3 sm:gap-5">
               <Button
-                href="#contact"
+                href="/contact"
                 variant={isDark ? 'secondary' : 'primary'}
                 size="sm"
                 rounded="none"
@@ -152,10 +145,10 @@ const Header = () => {
           {/* Main Navigation Links */}
           <nav className="my-auto py-8">
             <ul className="space-y-4 sm:space-y-6">
-              {navItems.map((item) => (
+              {navRoutes.map((item) => (
                 <li key={item.name} className="overflow-hidden">
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.path}
                     onClick={() => setIsMenuOpen(false)}
                     className="group inline-flex items-baseline gap-4 sm:gap-6 text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-black hover:text-gray-500 transition-colors duration-200"
                   >
@@ -165,7 +158,7 @@ const Header = () => {
                     <span className="inline-block transform group-hover:translate-x-3 transition-transform duration-300 ease-out">
                       {item.name}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
