@@ -1,4 +1,4 @@
-import { FiTwitter, FiLinkedin, FiInstagram, FiArrowUpRight } from 'react-icons/fi'
+import { FiInstagram, FiLinkedin, FiFacebook, FiYoutube, FiArrowUpRight } from 'react-icons/fi'
 import Button from '../ui/Button'
 
 const Footer = () => {
@@ -23,11 +23,9 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-black text-gray-300 border-t border-neutral-900 overflow-hidden">
-      {/* ======================================================== */}
-      {/* CTA HEADER SECTION: LET'S GET STARTED (ONE LINE) */}
-      {/* ======================================================== */}
-      <section className="py-16 sm:py-24 lg:py-32 border-b border-neutral-900 overflow-hidden">
+    <footer className="bg-black text-gray-300 border-t border-white/10 overflow-hidden">
+
+      <section className="py-16 sm:py-24 lg:py-32 border-b border-white/10 overflow-hidden bg-black">
         <div className="site-container text-center">
           <a
             href="#contact"
@@ -44,7 +42,7 @@ const Footer = () => {
       {/* ======================================================== */}
       {/* LOWER FOOTER: NAVIGATION & INFO */}
       {/* ======================================================== */}
-      <div className="site-container py-16 sm:py-20">
+      <div className="site-container py-16 sm:py-20 bg-black">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Brand info (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
@@ -62,21 +60,21 @@ const Footer = () => {
               <a
                 href="#"
                 aria-label="Twitter / X"
-                className="w-10 h-10 bg-neutral-950 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
+                className="w-10 h-10 bg-black border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
               >
                 <FiTwitter className="w-4 h-4" />
               </a>
               <a
                 href="#"
                 aria-label="LinkedIn"
-                className="w-10 h-10 bg-neutral-950 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
+                className="w-10 h-10 bg-black border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
               >
                 <FiLinkedin className="w-4 h-4" />
               </a>
               <a
                 href="#"
                 aria-label="Instagram"
-                className="w-10 h-10 bg-neutral-950 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
+                className="w-10 h-10 bg-black border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors"
               >
                 <FiInstagram className="w-4 h-4" />
               </a>
@@ -121,36 +119,48 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter / Contact (3 cols) */}
-          <div className="lg:col-span-3">
+          {/* Get In Touch (3 cols) */}
+          <div className="lg:col-span-3 space-y-4">
             <h4 className="text-xs font-bold text-white tracking-widest uppercase mb-5">
-              Stay Connected
+              GET IN TOUCH
             </h4>
-            <p className="text-sm text-gray-400 mb-4 leading-relaxed">
-              Subscribe to receive updates on our latest work and insights.
-            </p>
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 bg-neutral-950 border border-neutral-800 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
-              />
+            <div className="space-y-3 text-sm text-gray-400">
+              <p className="text-gray-300">
+                Kochi, Kerala, India
+              </p>
+              <div>
+                <a
+                  href="mailto:contact@antsclan.com"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 inline-block"
+                >
+                  contact@antsclan.com
+                </a>
+              </div>
+              <div>
+                <a
+                  href="tel:+91XXXXXXXXXX"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 inline-block font-mono"
+                >
+                  +91 XXXXX XXXXX
+                </a>
+              </div>
+            </div>
+
+            <div className="pt-2">
               <Button
-                type="submit"
-                variant="primary"
-                rounded="none"
-                fullWidth
+                href="#contact"
+                variant="ghostWhite"
                 size="md"
                 icon={FiArrowUpRight}
               >
-                Subscribe
+                Let's Talk About Your Project
               </Button>
-            </form>
+            </div>
           </div>
         </div>
 
         {/* Bottom copyright bar */}
-        <div className="mt-16 pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-4 sm:space-y-0">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-4 sm:space-y-0">
           <p>© {currentYear} Ann's Clan. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="#" className="hover:text-gray-400 transition-colors">

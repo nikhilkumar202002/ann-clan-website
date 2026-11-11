@@ -25,7 +25,9 @@ const Button = ({
     outline: 'border-2 border-black text-black hover:bg-black hover:text-white',
     outlineWhite: 'border-2 border-white text-white hover:bg-white hover:text-black hover:border-white',
     link: 'text-black border-b-2 border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 rounded-none bg-transparent px-0 py-0',
+    linkWhite: 'text-white border-b border-white pb-0.5 hover:text-gray-300 hover:border-gray-300 rounded-none bg-transparent px-0 py-0',
     ghost: 'text-gray-500 hover:text-black bg-transparent px-0 py-0',
+    ghostWhite: 'text-white hover:text-gray-300 bg-transparent px-0 py-0',
     dark: 'bg-gray-950 text-white hover:bg-white hover:text-gray-950 border border-gray-800',
     glow: 'bg-black text-white',
   }
@@ -50,7 +52,11 @@ const Button = ({
     lg: 'rounded-lg',
   }
 
-  const isTextOnly = variant === 'link' || variant === 'ghost'
+  const isTextOnly =
+    variant === 'link' ||
+    variant === 'linkWhite' ||
+    variant === 'ghost' ||
+    variant === 'ghostWhite'
   const appliedFont = fontSizes[size] || fontSizes.md
   const appliedPadding = isTextOnly ? 'px-0 py-0' : paddings[size] || paddings.md
   const appliedRounded = isTextOnly ? 'rounded-none' : roundeds[rounded] || roundeds.full
