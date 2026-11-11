@@ -12,7 +12,7 @@ const WhatDrivesUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-4xl mx-auto text-center flex flex-col items-center mb-16 sm:mb-24"
+          className="w-full text-center flex flex-col items-center mb-16 sm:mb-24"
         >
           {/* Eyebrow Badge */}
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -29,13 +29,11 @@ const WhatDrivesUs = () => {
           </h2>
 
           {/* Core Body Narratives */}
-          <div className="space-y-6 text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-normal max-w-3xl">
+          <div className="w-full space-y-6 text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-normal">
             <p>
-              We believe creativity is more than making something look good. It is about understanding people, discovering opportunities and communicating ideas that make a difference.
+              We believe creativity is more than making something look good. It is about understanding people, discovering opportunities and communicating ideas that make a difference. At ANTS CLAN, we combine creative thinking with purposeful execution. Every strategy, visual and campaign begins with understanding the brand and its audience.
             </p>
-            <p>
-              At ANTS CLAN, we combine creative thinking with purposeful execution. Every strategy, visual and campaign begins with understanding the brand and its audience.
-            </p>
+          
             <p className="font-bold text-gray-900 text-lg sm:text-xl md:text-2xl pt-2">
               We don't just create content. We create meaningful brand experiences.
             </p>
