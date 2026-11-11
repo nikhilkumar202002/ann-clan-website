@@ -21,10 +21,13 @@ const PublicRelations = () => {
         align="center"
         minHeight="min-h-[50vh] sm:min-h-[55vh]"
         className="pt-28 pb-14 sm:pt-36 sm:pb-20"
-        badgeClassName="text-white"
         bgImage="/banners/service-page-background.jpg"
         overlayClassName=""
-        badge="[ PUBLIC RELATIONS ]"
+        breadcrumb={[
+          { label: 'Home', href: '/' },
+          { label: 'Services', href: '/services' },
+          { label: 'Public Relations' },
+        ]}
         title={
           <>
             BUILD YOUR REPUTATION. <br className="hidden sm:inline" />

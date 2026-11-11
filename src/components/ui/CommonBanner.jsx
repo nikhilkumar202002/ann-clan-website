@@ -1,4 +1,5 @@
 import { isValidElement, cloneElement } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { usePreloader } from '../../context/PreloaderContext'
 
@@ -172,12 +173,21 @@ const CommonBanner = ({
               {breadcrumb.map((crumb, idx) => (
                 <span key={idx} className="flex items-center gap-2">
                   {crumb.href ? (
-                    <a
-                      href={crumb.href}
-                      className="hover:text-white transition-colors"
-                    >
-                      {crumb.label}
-                    </a>
+                    crumb.href.startsWith('/') ? (
+                      <Link
+                        to={crumb.href}
+                        className="hover:text-white transition-colors"
+                      >
+                        {crumb.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={crumb.href}
+                        className="hover:text-white transition-colors"
+                      >
+                        {crumb.label}
+                      </a>
+                    )
                   ) : (
                     <span className="text-white">{crumb.label}</span>
                   )}
