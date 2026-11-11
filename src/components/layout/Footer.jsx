@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-gray-300 border-t border-white/10 overflow-hidden">
 
-      <section className="py-16 sm:py-24 lg:py-32 border-b border-white/10 overflow-hidden bg-black">
+      <section className="py-8 sm:py-15 lg:py-20 border-b border-white/10 overflow-hidden bg-black">
         <div className="site-container text-center">
           <a
             href="#contact"
