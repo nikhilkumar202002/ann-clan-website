@@ -110,6 +110,8 @@ const CommonBanner = ({
   overlayClassName = 'bg-gradient-to-t from-black via-black/70 to-black/80',
   align = 'center',
   breadcrumb,
+  minHeight = 'min-h-[80vh]',
+  badgeClassName = 'text-gray-400',
   className = '',
   children,
 }) => {
@@ -118,7 +120,7 @@ const CommonBanner = ({
 
   return (
     <section
-      className={`relative min-h-[80vh] flex flex-col justify-center bg-black text-white overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 ${className}`}
+      className={`relative ${minHeight} flex flex-col justify-center bg-black text-white overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 ${className}`}
     >
       {/* Background Media: Video, Image, or Ambient Dark Backdrop */}
       <motion.div
@@ -194,7 +196,7 @@ const CommonBanner = ({
               className={`flex items-center gap-3 mb-5 sm:mb-6 ${isCentered ? 'justify-center' : ''}`}
             >
               <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></span>
-              <span className="text-xs font-bold tracking-widest uppercase text-gray-400">
+              <span className={`text-xs font-bold tracking-widest uppercase ${badgeClassName}`}>
                 {badge}
               </span>
             </motion.div>
