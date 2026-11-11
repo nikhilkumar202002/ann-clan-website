@@ -34,15 +34,15 @@ const Button = ({
 
   // Explicit font sizes and gaps so font size is ALWAYS strictly controlled
   const fontSizes = {
-    sm: 'text-xs gap-1.5',
-    md: 'text-xs sm:text-sm gap-2',
-    lg: 'text-sm sm:text-base gap-2.5',
+    sm: 'text-[11px] sm:text-xs gap-1.5',
+    md: 'text-xs sm:text-[13px] gap-2',
+    lg: 'text-xs sm:text-sm gap-2',
   }
 
   const paddings = {
-    sm: 'px-4 py-2',
-    md: 'px-6 py-3',
-    lg: 'px-8 py-4',
+    sm: 'px-3.5 py-1.5',
+    md: 'px-5 py-2.5',
+    lg: 'px-6 sm:px-7 py-2.5 sm:py-3',
   }
 
   const roundeds = {
@@ -68,11 +68,11 @@ const Button = ({
   const content = (
     <>
       {Icon && iconPosition === 'left' && (
-        <Icon className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:-translate-x-0.5" />
+        <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 transition-transform duration-200 group-hover:-translate-x-0.5" />
       )}
       {flipText ? <FlipText>{children}</FlipText> : <span>{children}</span>}
       {Icon && iconPosition === 'right' && (
-        <Icon className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       )}
     </>
   )
