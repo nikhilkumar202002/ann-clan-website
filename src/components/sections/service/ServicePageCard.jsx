@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 
@@ -7,6 +8,7 @@ const ServicePageCard = () => {
     {
       id: 'pr',
       title: 'PUBLIC RELATIONS',
+      path: '/services/public-relations',
       tagline: 'BUILD CONNECTIONS. SHAPE PERCEPTIONS. EARN TRUST.',
       description1:
         'Your brand deserves to be heard. We help businesses communicate their stories, strengthen their public image and build meaningful relationships with audiences and media.',
@@ -27,6 +29,7 @@ const ServicePageCard = () => {
     {
       id: 'dm',
       title: 'DIGITAL MARKETING',
+      path: '/services/digital-marketing',
       tagline: 'MAKE YOUR DIGITAL PRESENCE COUNT.',
       description1:
         'In a connected world, being visible is only the beginning. We help brands reach the right audiences through creative digital campaigns and strategic online communication.',
@@ -47,6 +50,7 @@ const ServicePageCard = () => {
     {
       id: 'web',
       title: 'WEB DEVELOPMENT',
+      path: '/services/web-development',
       tagline: 'DIGITAL EXPERIENCES BUILT FOR YOUR BRAND.',
       description1:
         'Your website is more than an online presence. It is an important part of your brand experience.',
@@ -67,6 +71,7 @@ const ServicePageCard = () => {
     {
       id: 'media',
       title: 'MEDIA PRODUCTION',
+      path: '/services/media-production',
       tagline: 'STORIES THAT DESERVE TO BE SEEN.',
       description1:
         'Great visuals capture attention. Powerful stories create lasting impressions.',
@@ -87,6 +92,7 @@ const ServicePageCard = () => {
     {
       id: 'influencer',
       title: 'INFLUENCER MARKETING',
+      path: '/services/influencer-marketing',
       tagline: 'THE RIGHT VOICES. THE RIGHT AUDIENCE. REAL CONNECTIONS.',
       description1:
         'People connect with people. We help brands collaborate with relevant content creators and influencers to communicate their message in an authentic and engaging way.',
@@ -166,7 +172,9 @@ const ServicePageCard = () => {
                 <div>
                   {/* Main Service Title */}
                   <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors mb-2.5">
-                    {service.title}
+                    <Link to={service.path} className="hover:underline">
+                      {service.title}
+                    </Link>
                   </h3>
 
                   {/* Bold Punchy Tagline */}

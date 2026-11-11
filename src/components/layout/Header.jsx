@@ -56,7 +56,9 @@ const Header = () => {
     }
   }, [isMenuOpen])
 
-  const isLightPage = location.pathname === '/privacy-policy'
+  const isLightPage =
+    location.pathname === '/privacy-policy' ||
+    location.pathname === '/legal/privacy-policy'
   const isDark = !isLightPage && !isScrolled && !isMenuOpen
 
   return (

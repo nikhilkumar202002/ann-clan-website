@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import FlipText from './FlipText'
 
 const Button = ({
@@ -8,6 +9,7 @@ const Button = ({
   icon: Icon,
   iconPosition = 'right',
   href,
+  to,
   type = 'button',
   fullWidth = false,
   className = '',
@@ -78,10 +80,16 @@ const Button = ({
   )
 
   const isGlowing = glowing || variant === 'glow'
+  const destination = to || href
+  const isInternal = Boolean(destination && destination.startsWith('/') && !destination.startsWith('//'))
 
   if (isGlowing) {
-    const Component = href ? 'a' : 'button'
-    const buttonProps = href ? { href, ...props } : { type, disabled, ...props }
+    const Component = isInternal ? Link : destination ? 'a' : 'button'
+    const buttonProps = isInternal
+      ? { to: destination, ...props }
+      : destination
+      ? { href: destination, ...props }
+      : { type, disabled, ...props }
     const radiusClass = roundeds[rounded] || roundeds.full
 
     return (
@@ -109,9 +117,17 @@ const Button = ({
     )
   }
 
-  if (href) {
+  if (isInternal) {
     return (
-      <a href={href} className={combinedClasses} {...props}>
+      <Link to={destination} className={combinedClasses} {...props}>
+        {content}
+      </Link>
+    )
+  }
+
+  if (destination) {
+    return (
+      <a href={destination} className={combinedClasses} {...props}>
         {content}
       </a>
     )

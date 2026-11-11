@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 
@@ -7,6 +8,7 @@ const Services = () => {
     {
       id: '01',
       title: 'Public Relations',
+      path: '/services/public-relations',
       description:
         'Strategic brand communications, media relations, high-impact press coverage, and reputation management that build unshakeable credibility.',
       image:
@@ -15,6 +17,7 @@ const Services = () => {
     {
       id: '02',
       title: 'Digital Marketing',
+      path: '/services/digital-marketing',
       description:
         'Data-driven performance campaigns, omnichannel growth strategies, precision targeting, and conversion funnels engineered to scale revenue.',
       image:
@@ -23,6 +26,7 @@ const Services = () => {
     {
       id: '03',
       title: 'Web Development',
+      path: '/services/web-development',
       description:
         'Bespoke digital platforms, high-speed modern web applications, interactive 3D experiences, and robust architectures built for long-term scalability.',
       image:
@@ -31,6 +35,7 @@ const Services = () => {
     {
       id: '04',
       title: 'Media Production',
+      path: '/services/media-production',
       description:
         'Cinematic video production, commercial photography, motion design, and high-production brand films that evoke emotion and drive action.',
       image:
@@ -39,6 +44,7 @@ const Services = () => {
     {
       id: '05',
       title: 'Influencer Marketing',
+      path: '/services/influencer-marketing',
       description:
         'Connecting brands with vetted creators and culture-shapers to run authentic ambassador programs, viral activations, and creator-led campaigns.',
       image:
@@ -47,6 +53,7 @@ const Services = () => {
     {
       id: '06',
       title: 'Creative Strategy',
+      path: '/services',
       description:
         'Uncompromising brand positioning, visual identity systems, creative direction, and cultural narratives that set you apart from competitors.',
       image:
@@ -81,9 +88,8 @@ const Services = () => {
         {/* 3-Column Services Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {services.map((service, index) => (
-            <motion.a
+            <motion.div
               key={service.id}
-              href="#contact"
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -95,27 +101,32 @@ const Services = () => {
               whileHover={{ y: -6 }}
               className="group bg-white border border-gray-200 flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg"
             >
-              {/* Service Image */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-              </div>
-
-              {/* Card Content: Name & Expert Text */}
-              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal mt-3">
-                    {service.description}
-                  </p>
+              <Link to={service.path} className="flex flex-col h-full">
+                {/* Service Image */}
+                <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
                 </div>
-              </div>
-            </motion.a>
+
+                {/* Card Content: Name & Expert Text */}
+                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors">
+                        {service.title}
+                      </h3>
+                      <FiArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200 shrink-0" />
+                    </div>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal mt-3">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
@@ -128,7 +139,7 @@ const Services = () => {
           className="mt-12 sm:mt-16 flex justify-center"
         >
           <Button
-            href="#contact"
+            href="/services"
             variant="primary"
             size="lg"
             rounded="none"

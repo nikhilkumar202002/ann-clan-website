@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const STORAGE_KEY = 'antsclan_cookie_consent'
@@ -85,12 +86,12 @@ export default function CookieConsent() {
 
             <p className="text-xs sm:text-sm leading-relaxed text-gray-600 font-normal">
               We use cookies to improve your browsing experience, understand website traffic and deliver tailored content. You can choose to accept all cookies or continue with only essential cookies. Read our{' '}
-              <a
-                href="/privacy-policy"
+              <Link
+                to="/privacy-policy"
                 className="font-bold text-black underline underline-offset-2 hover:text-gray-600 transition-colors"
               >
                 Privacy Policy
-              </a>
+              </Link>
               .
             </p>
           </div>

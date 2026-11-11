@@ -8,12 +8,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const serviceLinks = [
-    { name: 'Public Relations', href: '#services' },
-    { name: 'Digital Marketing', href: '#services' },
-    { name: 'Web Development', href: '#services' },
-    { name: 'Media Production', href: '#services' },
-    { name: 'Influencer Marketing', href: '#services' },
-    { name: 'Creative Strategy', href: '#services' },
+    { name: 'Public Relations', path: '/services/public-relations' },
+    { name: 'Digital Marketing', path: '/services/digital-marketing' },
+    { name: 'Web Development', path: '/services/web-development' },
+    { name: 'Media Production', path: '/services/media-production' },
+    { name: 'Influencer Marketing', path: '/services/influencer-marketing' },
+    { name: 'Creative Strategy', path: '/services' },
   ]
 
   return (
@@ -129,12 +129,12 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               {serviceLinks.map((service) => (
                 <li key={service.name}>
-                  <a
-                    href={service.href}
+                  <Link
+                    to={service.path}
                     className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {service.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,7 +1,7 @@
-import CommonBanner from '../components/ui/CommonBanner'
-import ServicePageCard from '../components/sections/service/ServicePageCard'
-import ServiceProcess from '../components/sections/service/ServiceProcess'
-import CommonCta from '../components/ui/CommonCta'
+import CommonBanner from '../../components/ui/CommonBanner'
+import ServicePageCard from '../../components/sections/service/ServicePageCard'
+import ServiceProcess from '../../components/sections/service/ServiceProcess'
+import CommonCta from '../../components/ui/CommonCta'
 
 const ServicesPage = () => {
   return (
