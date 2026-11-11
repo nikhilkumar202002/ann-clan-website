@@ -47,8 +47,8 @@ const HomeCta = () => {
           </div>
 
           {/* Headline */}
-          <h2 className="text-3xl min-[400px]:text-3xl sm:text-4xl md:text-6xl lg:text-5xl xl:text-6xl font-black uppercase tracking-tight text-white leading-[1.04]">
-            LET'S MAKE YOUR BRAND <br className="hidden sm:inline" />
+          <h2 className="text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-black uppercase tracking-tight text-white leading-[1.06]">
+            LET'S MAKE YOUR BRAND <br />
             IMPOSSIBLE TO IGNORE.
           </h2>
 

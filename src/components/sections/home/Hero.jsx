@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 import FlipText from '../../ui/FlipText'
+import { usePreloader } from '../../../context/PreloaderContext'
 
 // Word-by-word smooth fade variants with high-end cubic-bezier easing
 const subHeadingContainer = {
@@ -53,6 +54,7 @@ const headingWordItem = {
   },
 }
 
+/*
 const descWordContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -76,8 +78,10 @@ const descWordItem = {
     },
   },
 }
+*/
 
 const Hero = () => {
+  const { isLoaded } = usePreloader()
   const [activeVideoIndex, setActiveVideoIndex] = useState(0)
 
   const videos = [
@@ -116,7 +120,7 @@ const Hero = () => {
       {/* Background Running Videos (Smoothly change in background with subtle entrance scale) */}
       <motion.div
         initial={{ opacity: 0, scale: 1.05 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={isLoaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.05 }}
         transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
         className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
       >
@@ -155,14 +159,14 @@ const Hero = () => {
           <motion.div
             variants={subHeadingContainer}
             initial="hidden"
-            animate="visible"
+            animate={isLoaded ? 'visible' : 'hidden'}
             className="mb-4 sm:mb-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3"
           >
             {['Ideas.', 'Stories.', 'Impact.'].map((word) => (
               <motion.span
                 key={word}
                 variants={subHeadingWordItem}
-                className="group text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-[0.25em] text-gray-300 hover:text-white transition-colors duration-200 select-none drop-shadow-sm cursor-pointer inline-flex"
+                className="group text-xs sm:text-sm md:text-base font-extrabold uppercase  text-gray-300 hover:text-white transition-colors duration-200 select-none drop-shadow-sm cursor-pointer inline-flex"
               >
                 <FlipText>{word}</FlipText>
               </motion.span>
@@ -170,11 +174,11 @@ const Hero = () => {
           </motion.div>
 
           {/* Main Heading: Word-by-word smooth fade */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl font-black uppercase tracking-tight leading-[1.05] text-white select-none drop-shadow-lg">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-8xl font-black uppercase tracking-tight leading-[1.05] text-white select-none drop-shadow-lg">
             <motion.span
               variants={headingWordContainer}
               initial="hidden"
-              animate="visible"
+              animate={isLoaded ? 'visible' : 'hidden'}
               className="flex flex-col items-center justify-center"
             >
               <span className="inline-flex justify-center gap-x-[0.26em]">
@@ -203,11 +207,11 @@ const Hero = () => {
           </h1>
 
           {/* Description: Word-by-word smooth fade */}
-          <p className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-sm">
+          {/* <p className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-sm">
             <motion.span
               variants={descWordContainer}
               initial="hidden"
-              animate="visible"
+              animate={isLoaded ? 'visible' : 'hidden'}
               className="inline-flex flex-wrap justify-center gap-x-[0.28em]"
             >
               {'We create powerful brand experiences through media, marketing, creativity and technology.'
@@ -222,12 +226,12 @@ const Hero = () => {
                   </motion.span>
                 ))}
             </motion.span>
-          </p>
+          </p> */}
 
           {/* CTAs: Center Aligned, Sharp with subtle spring */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
             transition={{
               duration: 0.85,
               delay: 1.05,
