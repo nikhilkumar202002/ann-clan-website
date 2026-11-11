@@ -1,6 +1,6 @@
 import CommonBanner from '../components/ui/CommonBanner'
 import ServicePageCard from '../components/sections/service/ServicePageCard'
-import Process from '../components/sections/home/Process'
+import ServiceProcess from '../components/sections/service/ServiceProcess'
 
 const ServicesPage = () => {
   return (
@@ -18,7 +18,7 @@ const ServicesPage = () => {
         }
       />
       <ServicePageCard />
-      <Process />
+      <ServiceProcess />
     </>
   )
 }

@@ -6,7 +6,6 @@ const ServicePageCard = () => {
   const serviceList = [
     {
       id: 'pr',
-      number: '01 / PUBLIC RELATIONS',
       title: 'PUBLIC RELATIONS',
       tagline: 'BUILD CONNECTIONS. SHAPE PERCEPTIONS. EARN TRUST.',
       description1:
@@ -27,7 +26,6 @@ const ServicePageCard = () => {
     },
     {
       id: 'dm',
-      number: '02 / DIGITAL MARKETING',
       title: 'DIGITAL MARKETING',
       tagline: 'MAKE YOUR DIGITAL PRESENCE COUNT.',
       description1:
@@ -48,7 +46,6 @@ const ServicePageCard = () => {
     },
     {
       id: 'web',
-      number: '03 / WEB DEVELOPMENT',
       title: 'WEB DEVELOPMENT',
       tagline: 'DIGITAL EXPERIENCES BUILT FOR YOUR BRAND.',
       description1:
@@ -69,7 +66,6 @@ const ServicePageCard = () => {
     },
     {
       id: 'media',
-      number: '04 / MEDIA PRODUCTION',
       title: 'MEDIA PRODUCTION',
       tagline: 'STORIES THAT DESERVE TO BE SEEN.',
       description1:
@@ -90,7 +86,6 @@ const ServicePageCard = () => {
     },
     {
       id: 'influencer',
-      number: '05 / INFLUENCER MARKETING',
       title: 'INFLUENCER MARKETING',
       tagline: 'THE RIGHT VOICES. THE RIGHT AUDIENCE. REAL CONNECTIONS.',
       description1:
@@ -140,9 +135,9 @@ const ServicePageCard = () => {
         </motion.div>
 
         {/* ======================================================== */}
-        {/* 2-COLUMN CARDS GRID (5 SERVICES + 1 CUSTOM CTA CARD) */}
+        {/* 3-COLUMN CARDS GRID (5 SERVICES + 1 CUSTOM CTA CARD) */}
         {/* ======================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {serviceList.map((service, index) => (
             <motion.div
               key={service.id}
@@ -151,7 +146,7 @@ const ServicePageCard = () => {
               viewport={{ once: true, margin: '-40px' }}
               transition={{
                 duration: 0.7,
-                delay: (index % 2) * 0.1,
+                delay: (index % 3) * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
               whileHover={{ y: -6 }}
@@ -167,38 +162,27 @@ const ServicePageCard = () => {
               </div>
 
               {/* Card Content Area */}
-              <div className="p-6 sm:p-8 lg:p-10 flex-1 flex flex-col justify-between">
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                 <div>
-                  {/* Category / Number Tag */}
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="w-2 h-2 rounded-full bg-black"></span>
-                    <span className="text-xs font-bold font-mono tracking-widest uppercase text-gray-500">
-                      {service.number}
-                    </span>
-                  </div>
-
                   {/* Main Service Title */}
-                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors mb-3">
+                  <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-gray-900 group-hover:text-black transition-colors mb-2.5">
                     {service.title}
                   </h3>
 
                   {/* Bold Punchy Tagline */}
-                  <h4 className="text-sm sm:text-base font-bold uppercase tracking-wide text-gray-800 mb-4">
+                  <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wide text-gray-800 mb-3.5">
                     {service.tagline}
                   </h4>
 
                   {/* Narrative Paragraphs */}
-                  <div className="space-y-3 text-sm sm:text-base text-gray-600 leading-relaxed font-normal mb-6">
+                  <div className="space-y-2.5 text-xs sm:text-sm text-gray-600 leading-relaxed font-normal mb-6">
                     <p>{service.description1}</p>
                     <p>{service.description2}</p>
                   </div>
 
-                  {/* Capabilities List */}
-                  <div className="pt-6 border-t border-gray-100">
-                    <span className="text-xs font-mono font-bold tracking-widest uppercase text-gray-400 block mb-3">
-                      [ OUR CAPABILITIES ]
-                    </span>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                  {/* Capabilities List (Without 'OUR CAPABILITIES' heading) */}
+                  <div className="pt-5 border-t border-gray-100">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-3 gap-y-2">
                       {service.capabilities.map((item) => (
                         <div key={item} className="flex items-center gap-2 text-xs sm:text-sm text-gray-700 font-medium">
                           <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0" />
@@ -235,29 +219,22 @@ const ServicePageCard = () => {
             viewport={{ once: true, margin: '-40px' }}
             transition={{
               duration: 0.7,
-              delay: 0.1,
+              delay: 0.16,
               ease: [0.16, 1, 0.3, 1],
             }}
             whileHover={{ y: -6 }}
-            className="group bg-black text-white border border-black flex flex-col justify-between p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300 hover:shadow-2xl h-full"
+            className="group bg-black text-white border border-black flex flex-col justify-between p-6 sm:p-8 overflow-hidden transition-all duration-300 hover:shadow-2xl h-full"
           >
             <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-2 h-2 rounded-full bg-white"></span>
-                <span className="text-xs font-bold font-mono tracking-widest uppercase text-gray-400">
-                  06 / CUSTOM PROJECT
-                </span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white mb-3">
+              <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white mb-2.5">
                 HAVE A CUSTOM BRIEF?
               </h3>
 
-              <h4 className="text-sm sm:text-base font-bold uppercase tracking-wide text-gray-200 mb-4">
+              <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wide text-gray-200 mb-3.5">
                 LET&apos;S BUILD WHAT MOVES YOUR BRAND FORWARD.
               </h4>
 
-              <div className="space-y-3 text-sm sm:text-base text-gray-300 leading-relaxed font-normal mb-6">
+              <div className="space-y-2.5 text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-6">
                 <p>
                   Every brand has unique goals and challenges. Whether you need an integrated 360° campaign, a high-impact launch, or specialized creative direction, we assemble the ideal team for your project.
                 </p>
@@ -266,11 +243,9 @@ const ServicePageCard = () => {
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-white/10">
-                <span className="text-xs font-mono font-bold tracking-widest uppercase text-gray-400 block mb-3">
-                  [ HOW WE PARTNER ]
-                </span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+              {/* Partner List (Without heading) */}
+              <div className="pt-5 border-t border-white/10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-3 gap-y-2">
                   {[
                     'Full-Service Brand Strategy',
                     'Cross-Channel Campaign Execution',
