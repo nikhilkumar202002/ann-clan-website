@@ -46,7 +46,7 @@ const OurClients = () => {
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-gray-900 leading-[1.05] max-w-4xl">
+          <h2 className="section-heading text-gray-900 max-w-4xl">
             TRUSTED BY BRANDS THAT THINK BIG.
           </h2>
         </div>

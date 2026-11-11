@@ -46,7 +46,7 @@ const About = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-gray-900 leading-[1.05]">
+            <h2 className="section-heading text-gray-900">
               More Than Creativity. <br className="hidden sm:inline" />
               <span className="text-gray-400">We Create Growth.</span>
             </h2>

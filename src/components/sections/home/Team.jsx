@@ -87,7 +87,7 @@ const Team = () => {
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-gray-900 leading-[1.05]">
+              <h2 className="section-heading text-gray-900">
                 THE PEOPLE BEHIND THE VISION.
               </h2>
 

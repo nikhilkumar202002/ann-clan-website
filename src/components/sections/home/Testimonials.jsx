@@ -79,7 +79,7 @@ const Testimonials = () => {
                 </span>
               </div>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.08] mb-12 sm:mb-16">
+              <h2 className="section-heading text-white mb-12 sm:mb-16">
                 Real collaboration.
                 <br />
                 Remarkable results.

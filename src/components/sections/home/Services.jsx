@@ -65,7 +65,7 @@ const Services = () => {
             </span>
           </div>
 
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-gray-900 leading-[1.05]">
+          <h2 className="section-heading text-gray-900">
             Everything Your Brand Needs to Grow.
           </h2>
         </div>
