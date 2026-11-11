@@ -112,7 +112,7 @@ const ServicePageCard = () => {
   ]
 
   return (
-    <section id="our-expertise" className="py-24 sm:py-32 bg-white border-t border-gray-100">
+    <section id="our-expertise" className="py-24 sm:py-32 bg-white">
       <div className="site-container">
         {/* ======================================================== */}
         {/* SECTION HEADER */}
