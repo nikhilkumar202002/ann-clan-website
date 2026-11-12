@@ -8,24 +8,21 @@ const Team = () => {
       name: 'Geo Antony George',
       role: 'Chief Executive Officer (CEO)',
       bio: "Leads the company's vision, business strategy and overall operations, driving growth through creative thinking and strategic leadership.",
-      image:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80',
+      image: '/Team/geo.jpg',
     },
     {
       id: '02',
       name: 'Ann Mary George',
       role: 'Founder',
       bio: "The visionary behind ANTS CLAN, shaping the company's foundation, creative direction and commitment to building meaningful brand experiences.",
-      image:
-        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80',
+      image: '/Team/Ann-mary.jpg',
     },
     {
       id: '03',
       name: 'Mithun Martin Paul',
       role: 'Chief Operating Officer (COO)',
       bio: 'Oversees operational excellence, team coordination and project execution, ensuring ideas move seamlessly from planning to delivery.',
-      image:
-        'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=80',
+      image: '/Team/midhun.jpg',
     },
   ]
 

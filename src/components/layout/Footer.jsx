@@ -151,19 +151,29 @@ const Footer = () => {
               </p>
               <div>
                 <a
-                  href="mailto:contact@antsclan.com"
+                  href="mailto:antproductionsclan@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors duration-200 inline-block"
                 >
-                  contact@antsclan.com
+                  antproductionsclan@gmail.com
                 </a>
               </div>
-              <div>
-                <a
-                  href="tel:+91XXXXXXXXXX"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 inline-block font-mono"
-                >
-                  +91 XXXXX XXXXX
-                </a>
+              <div className="space-y-1">
+                <div>
+                  <a
+                    href="tel:+919562148852"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 inline-block font-mono"
+                  >
+                    +91 95621 48852
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="tel:+919037693852"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 inline-block font-mono"
+                  >
+                    +91 90376 93852
+                  </a>
+                </div>
               </div>
             </div>
 

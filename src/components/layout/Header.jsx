@@ -176,16 +176,23 @@ const Header = () => {
               <p className="font-semibold text-black">Ann's Clan Picture Company</p>
               <p className="text-gray-400 mt-0.5">Media, Marketing & Technology</p>
             </div>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <a
-                href="mailto:hello@annsclan.com"
+                href="mailto:antproductionsclan@gmail.com"
                 className="font-semibold text-black hover:underline"
               >
-                hello@annsclan.com
+                antproductionsclan@gmail.com
               </a>
-              <span className="text-gray-300">•</span>
+              <span className="hidden sm:inline text-gray-300">•</span>
+              <a
+                href="tel:+919562148852"
+                className="font-semibold font-mono text-black hover:underline"
+              >
+                +91 95621 48852
+              </a>
+              <span className="hidden sm:inline text-gray-300">•</span>
               <Button
-                href="#contact"
+                href="/contact"
                 variant="link"
                 icon={FiArrowUpRight}
                 onClick={() => setIsMenuOpen(false)}

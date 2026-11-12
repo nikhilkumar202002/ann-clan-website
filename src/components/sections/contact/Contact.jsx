@@ -72,10 +72,10 @@ const Contact = () => {
                 </span>
                 <p className="mt-1">
                   <a
-                    href="mailto:contact@antsclan.com"
+                    href="mailto:antproductionsclan@gmail.com"
                     className="text-lg sm:text-xl font-bold text-gray-900 hover:text-black underline underline-offset-4 transition-colors"
                   >
-                    contact@antsclan.com
+                    antproductionsclan@gmail.com
                   </a>
                 </p>
               </div>
@@ -85,14 +85,24 @@ const Contact = () => {
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-400">
                   CALL US
                 </span>
-                <p className="mt-1">
-                  <a
-                    href="tel:+91XXXXXXXXXX"
-                    className="text-lg sm:text-xl font-bold font-mono text-gray-900 hover:text-black transition-colors"
-                  >
-                    +91 XXXXX XXXXX
-                  </a>
-                </p>
+                <div className="mt-1 space-y-1">
+                  <div>
+                    <a
+                      href="tel:+919562148852"
+                      className="text-lg sm:text-xl font-bold font-mono text-gray-900 hover:text-black transition-colors"
+                    >
+                      +91 95621 48852
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="tel:+919037693852"
+                      className="text-lg sm:text-xl font-bold font-mono text-gray-900 hover:text-black transition-colors"
+                    >
+                      +91 90376 93852
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* 3. OUR LOCATION */}

@@ -302,10 +302,26 @@ const PrivacyPolicy = () => {
                 <p className="text-gray-700">
                   <span className="font-semibold text-gray-900">Email:</span>{' '}
                   <a
-                    href="mailto:contact@antsclan.com"
+                    href="mailto:antproductionsclan@gmail.com"
                     className="text-black font-semibold underline underline-offset-4 hover:text-gray-600 transition-colors"
                   >
-                    contact@antsclan.com
+                    antproductionsclan@gmail.com
+                  </a>
+                </p>
+                <p className="text-gray-700">
+                  <span className="font-semibold text-gray-900">Phone:</span>{' '}
+                  <a
+                    href="tel:+919562148852"
+                    className="text-black font-semibold underline underline-offset-4 hover:text-gray-600 transition-colors"
+                  >
+                    +91 95621 48852
+                  </a>
+                  {', '}
+                  <a
+                    href="tel:+919037693852"
+                    className="text-black font-semibold underline underline-offset-4 hover:text-gray-600 transition-colors"
+                  >
+                    +91 90376 93852
                   </a>
                 </p>
                 <p className="text-gray-700">

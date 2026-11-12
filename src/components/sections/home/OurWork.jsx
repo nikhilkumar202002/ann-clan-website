@@ -1,149 +1,145 @@
-import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 
-const OurWork = () => {
-  const [activeCategory, setActiveCategory] = useState('All')
+// 10 Curated Videos from /portfolio/video
+const portfolioVideos = [
+  { id: 'v1', src: '/portfolio/video/Video-30987.mp4' },
+  { id: 'v2', src: '/portfolio/video/Video-37527.mp4' },
+  { id: 'v3', src: '/portfolio/video/Video-82365.mp4' },
+  { id: 'v4', src: '/portfolio/video/Video-54169.mp4' },
+  { id: 'v5', src: '/portfolio/video/Video-52619.mp4' },
+  { id: 'v6', src: '/portfolio/video/Video-75150.mp4' },
+  { id: 'v7', src: '/portfolio/video/Video-34037.mp4' },
+  { id: 'v8', src: '/portfolio/video/Video-33864.mp4' },
+  { id: 'v9', src: '/portfolio/video/Video-62311.mp4' },
+  { id: 'v10', src: '/portfolio/video/Video-65728.mp4' },
+]
 
-  const categories = ['All', 'Brand Identity', 'Digital Experience', '3D & Motion', 'Development']
+// 10 Curated Creatives from /portfolio/creatives
+const portfolioCreatives = [
+  { id: 'c1', src: '/portfolio/creatives/Image-14107.jpg', title: 'Creative 01' },
+  { id: 'c2', src: '/portfolio/creatives/Image-15117.jpg', title: 'Creative 02' },
+  { id: 'c3', src: '/portfolio/creatives/Image-21236.jpg', title: 'Creative 03' },
+  { id: 'c4', src: '/portfolio/creatives/Image-22149.jpg', title: 'Creative 04' },
+  { id: 'c5', src: '/portfolio/creatives/Image-23925.jpg', title: 'Creative 05' },
+  { id: 'c6', src: '/portfolio/creatives/Image-24014.jpg', title: 'Creative 06' },
+  { id: 'c7', src: '/portfolio/creatives/Image-26498.jpg', title: 'Creative 07' },
+  { id: 'c8', src: '/portfolio/creatives/Image-32973.jpg', title: 'Creative 08' },
+  { id: 'c9', src: '/portfolio/creatives/Image-33213.jpg', title: 'Creative 09' },
+  { id: 'c10', src: '/portfolio/creatives/Image-36581.jpg', title: 'Creative 10' },
+]
 
-  const projects = [
-    {
-      id: '01',
-      title: 'Aura Luxury Global',
-      category: 'Brand Identity',
-      year: '2026',
-      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
-      description: 'Complete digital rebrand and bespoke e-commerce experience for an international luxury lifestyle brand.',
-    },
-    {
-      id: '02',
-      title: 'Kinetic AI Labs',
-      category: '3D & Motion',
-      year: '2025',
-      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-      description: 'Interactive generative 3D visual platform exploring the intersection of creative AI and digital aesthetics.',
-    },
-    {
-      id: '03',
-      title: 'Monolith Studio',
-      category: 'Development',
-      year: '2025',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-      description: 'Minimalist editorial portfolio and custom headless architecture for a premier architectural atelier.',
-    },
-    {
-      id: '04',
-      title: 'Synapse Media',
-      category: 'Digital Experience',
-      year: '2024',
-      image: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&w=1200&q=80',
-      description: 'Dynamic visual identity system, immersive motion direction, and interactive product campaign.',
-    },
-  ]
+// Duplicate both lists for seamless infinite looping
+const videoTrack = [...portfolioVideos, ...portfolioVideos]
+const creativeTrack = [...portfolioCreatives, ...portfolioCreatives]
 
-  const filteredProjects =
-    activeCategory === 'All'
-      ? projects
-      : projects.filter((project) => project.category === activeCategory)
-
+const OurWork = ({ showHeader = true }) => {
   return (
-    <section id="our-work" className="py-24 sm:py-32 bg-white border-t border-gray-100">
-      <div className="site-container">
-        {/* Section Header */}
-        <div className="flex items-center gap-3 mb-8">
-          <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
-          <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
-            [ 03 / SELECTED WORK & CASE STUDIES ]
-          </span>
-        </div>
+    <section id="our-work" className="py-24 sm:py-32 bg-white border-t border-gray-100 overflow-hidden">
+      {/* ======================================================== */}
+      {/* SECTION HEADER */}
+      {/* ======================================================== */}
+      {showHeader && (
+        <div className="site-container mb-14 sm:mb-18">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col items-center text-center max-w-4xl mx-auto"
+          >
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
+              <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
+                [ SELECTED WORKS / PORTFOLIO ]
+              </span>
+            </div>
 
-        {/* Title & Filter Tabs */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 sm:mb-20">
-          <div>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-gray-900 leading-[1.05]">
-              Work that shapes culture and drives growth.
+            <h2 className="section-heading text-gray-900">
+              STORIES THAT MOVE. <br />
+              CREATIVES THAT INSPIRE.
             </h2>
-          </div>
+          </motion.div>
+        </div>
+      )}
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-2 lg:justify-end flex-shrink-0">
-            {categories.map((category) => (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 cursor-pointer ${
-                  activeCategory === category
-                    ? 'bg-black text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-black'
-                }`}
+      {/* ======================================================== */}
+      {/* 2-ROW DUAL OPPOSITE DIRECTION SLIDERS */}
+      {/* ======================================================== */}
+      <div className="space-y-6 sm:space-y-8 relative">
+        {/* Left & Right Soft Fade Vignettes for Clean Viewport Edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-24 bg-gradient-to-r from-white to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-24 bg-gradient-to-l from-white to-transparent z-20" />
+
+        {/* ---------------------------------------------------- */}
+        {/* ROW 1: 10 VIDEOS (SLIDES TO THE LEFT) */}
+        {/* ---------------------------------------------------- */}
+        <div className="w-full overflow-hidden">
+          <div className="animate-marquee gap-4 sm:gap-6">
+            {videoTrack.map((item, index) => (
+              <div
+                key={`vid-${item.id}-${index}`}
+                className="shrink-0 h-[340px] sm:h-[400px] lg:h-[450px] aspect-[9/16] overflow-hidden bg-black border border-gray-200 shadow-sm relative group"
               >
-                {category}
-              </button>
+                <video
+                  src={item.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Projects 2-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="group cursor-pointer flex flex-col"
-            >
-              {/* Image Container: Sharp without border-radius or shadow */}
-              <div className="relative aspect-[16/10] sm:aspect-[4/3] overflow-hidden bg-gray-100 mb-6">
+        {/* ---------------------------------------------------- */}
+        {/* ROW 2: 10 CREATIVES (SLIDES TO THE RIGHT - OPPOSITE) */}
+        {/* ---------------------------------------------------- */}
+        <div className="w-full overflow-hidden">
+          <div className="animate-marquee-reverse gap-4 sm:gap-6">
+            {creativeTrack.map((item, index) => (
+              <div
+                key={`img-${item.id}-${index}`}
+                className="shrink-0 h-[300px] sm:h-[360px] lg:h-[400px] aspect-[4/5] overflow-hidden bg-gray-100 border border-gray-200 shadow-sm relative group"
+              >
                 <img
-                  src={project.image}
-                  alt={project.title}
+                  src={item.src}
+                  alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-
-                {/* Floating Meta Badges */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                  <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-white/90 backdrop-blur-md text-black">
-                    {project.category}
-                  </span>
-                  <span className="px-3 py-1 text-xs font-mono font-semibold bg-black text-white">
-                    {project.year}
-                  </span>
-                </div>
-
-                {/* Hover Arrow Overlay Button */}
-                <div className="absolute bottom-4 right-4 w-11 h-11 bg-white text-black flex items-center justify-center shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                  <FiArrowUpRight className="w-5 h-5" />
-                </div>
               </div>
-
-              {/* Project Meta & Details */}
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-gray-900 group-hover:text-gray-600 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed max-w-xl">
-                    {project.description}
-                  </p>
-                </div>
-                <span className="text-sm font-mono font-black text-black group-hover:text-gray-600 transition-colors pt-1">
-                  {project.id}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* View All Projects CTA */}
-        <div className="mt-20 text-center">
-          <Button href="#contact" variant="outline" size="lg" icon={FiArrowUpRight}>
-            Have a project in mind? Let's talk
-          </Button>
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* ======================================================== */}
+      {/* BOTTOM CTA: VIEW ALL WORKS BUTTON */}
+      {/* ======================================================== */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        className="mt-14 sm:mt-20 flex justify-center site-container"
+      >
+        <Button
+          href="/our-work"
+          variant="primary"
+          size="lg"
+          rounded="none"
+          icon={FiArrowUpRight}
+        >
+          VIEW ALL WORKS
+        </Button>
+      </motion.div>
     </section>
   )
 }
 
 export default OurWork
-
