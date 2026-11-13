@@ -14,7 +14,7 @@ const HomeCta = () => {
       }
       description="Have an idea? We have the creativity and expertise to bring it to life."
       buttonText="LET'S TALK ABOUT YOUR PROJECT"
-      buttonHref="#contact"
+      buttonHref="/contact"
     />
   )
 }

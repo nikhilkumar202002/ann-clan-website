@@ -1,31 +1,35 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { usePreloader } from '../../context/PreloaderContext'
 
 const STORAGE_KEY = 'antsclan_cookie_consent'
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false)
+  const { isPreloaderComplete } = usePreloader()
 
-  // Show banner on initial visit if consent has not yet been saved
+  // Show banner only after the preloader ends if consent has not yet been saved
   useEffect(() => {
+    if (!isPreloaderComplete) return
+
     let timer
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
       if (!saved) {
         timer = setTimeout(() => {
           setVisible(true)
-        }, 1200)
+        }, 800)
       }
     } catch {
       timer = setTimeout(() => {
         setVisible(true)
-      }, 1200)
+      }, 800)
     }
     return () => {
       if (timer) clearTimeout(timer)
     }
-  }, [])
+  }, [isPreloaderComplete])
 
   // Listen for global custom event to re-open Cookie Notice from footer
   useEffect(() => {
@@ -68,7 +72,7 @@ export default function CookieConsent() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 35 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 z-[9999] mx-auto max-w-2xl bg-white p-6 sm:p-8 shadow-2xl"
+          className="fixed bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 z-[9990] mx-auto max-w-2xl bg-white p-6 sm:p-8 shadow-2xl"
         >
           {/* Content Above */}
           <div>

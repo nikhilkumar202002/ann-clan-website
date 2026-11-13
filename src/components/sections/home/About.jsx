@@ -93,7 +93,7 @@ const About = () => {
 
             <div className="pt-2">
               <Button
-                href="#services"
+                to="/about"
                 variant="primary"
                 size="lg"
                 rounded="none"

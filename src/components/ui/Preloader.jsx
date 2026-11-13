@@ -28,7 +28,7 @@ const wordVariants = {
 }
 
 const Preloader = () => {
-  const { setIsLoaded } = usePreloader()
+  const { setIsLoaded, setIsPreloaderComplete } = usePreloader()
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const [isCurtainLifting, setIsCurtainLifting] = useState(false)
   const [isComplete, setIsComplete] = useState(false)
@@ -64,10 +64,18 @@ const Preloader = () => {
         if (window.lenis) {
           window.lenis.start()
         }
+
+        // Safety fallback: ensure complete state is dispatched even if animation event is delayed
+        setTimeout(() => {
+          setIsComplete(true)
+          if (setIsPreloaderComplete) {
+            setIsPreloaderComplete(true)
+          }
+        }, 1100)
       }, 850)
       return () => clearTimeout(exitTimer)
     }
-  }, [currentWordIndex, setIsLoaded])
+  }, [currentWordIndex, setIsLoaded, setIsPreloaderComplete])
 
   if (isComplete) return null
 
@@ -82,6 +90,9 @@ const Preloader = () => {
       onAnimationComplete={() => {
         if (isCurtainLifting) {
           setIsComplete(true)
+          if (setIsPreloaderComplete) {
+            setIsPreloaderComplete(true)
+          }
         }
       }}
       className="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center select-none"

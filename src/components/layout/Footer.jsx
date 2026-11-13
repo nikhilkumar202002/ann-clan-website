@@ -192,14 +192,14 @@ const Footer = () => {
 
         {/* Bottom copyright bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-4 sm:space-y-0">
-          <p>© {currentYear} Ann's Clan. All rights reserved.</p>
+          <p>© {currentYear} Antsclanmedia. All rights reserved.</p>
           <div className="flex space-x-6">
             <Link to="/privacy-policy" className="hover:text-gray-400 transition-colors">
               Privacy Policy
             </Link>
-            <a href="#" className="hover:text-gray-400 transition-colors">
+            <Link to="/privacy-policy" className="hover:text-gray-400 transition-colors">
               Terms of Service
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => window.dispatchEvent(new Event('openCookieSettings'))}

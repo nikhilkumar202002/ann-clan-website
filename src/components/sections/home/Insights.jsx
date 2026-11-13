@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Button from '../../ui/Button'
 
@@ -54,7 +55,7 @@ const Insights = () => {
             </h2>
           </div>
           <div>
-            <Button href="#" variant="link" icon={FiArrowUpRight}>
+            <Button to="/insights" variant="link" icon={FiArrowUpRight}>
               Explore All Articles
             </Button>
           </div>
@@ -63,8 +64,9 @@ const Insights = () => {
         {/* Articles 3-Column Editorial Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {articles.map((article) => (
-            <article
+            <Link
               key={article.id}
+              to="/insights"
               className="group cursor-pointer flex flex-col justify-between"
             >
               <div>
@@ -107,7 +109,7 @@ const Insights = () => {
                 </span>
                 <FiArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

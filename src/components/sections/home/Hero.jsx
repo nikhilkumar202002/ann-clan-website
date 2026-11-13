@@ -241,7 +241,7 @@ const Hero = () => {
           >
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button
-                href="#contact"
+                to="/contact"
                 variant="secondary"
                 size="lg"
                 rounded="none"
@@ -253,7 +253,7 @@ const Hero = () => {
             </motion.div>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button
-                href="#our-work"
+                to="/our-work"
                 variant="outlineWhite"
                 size="lg"
                 rounded="none"
