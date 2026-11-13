@@ -31,7 +31,7 @@ const WhatDrivesUs = () => {
           {/* Core Body Narratives */}
           <div className="w-full space-y-6 text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-normal">
             <p>
-              We believe creativity is more than making something look good. It is about understanding people, discovering opportunities and communicating ideas that make a difference. At ANTS CLAN, we combine creative thinking with purposeful execution. Every strategy, visual and campaign begins with understanding the brand and its audience.
+              We believe creativity is more than making something look good. It is about understanding people, discovering opportunities and communicating ideas that make a difference. At Antsclanmedia, we combine creative thinking with purposeful execution. Every strategy, visual and campaign begins with understanding the brand and its audience.
             </p>
           
             <p className="font-bold text-gray-900 text-lg sm:text-xl md:text-2xl pt-2">

@@ -58,7 +58,7 @@ const About = () => {
 
 
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal max-w-2xl">
-              Ann's Clan is a multidisciplinary creative collective dedicated to transforming forward-thinking brands into market leaders. By fusing thoughtful design, strategic narrative, and modern engineering, we elevate ambitious brands with bespoke solutions that drive measurable, sustainable growth.
+              Antsclanmedia is a multidisciplinary creative collective dedicated to transforming forward-thinking brands into market leaders. By fusing thoughtful design, strategic narrative, and modern engineering, we elevate ambitious brands with bespoke solutions that drive measurable, sustainable growth.
             </p>
 
             {/* Numbering Stats: In between lines only with Anton font and counter animation */}
@@ -114,7 +114,7 @@ const About = () => {
             <div className="relative aspect-[4/5] max-h-[620px] w-full overflow-hidden bg-gray-100">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
-                alt="Ann's Clan creative studio"
+                alt="Antsclanmedia creative studio"
                 className="w-full h-full object-cover"
               />
             </div>

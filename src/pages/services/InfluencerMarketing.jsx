@@ -144,7 +144,7 @@ const InfluencerMarketing = () => {
                   By bringing brands and creators together, we help create collaborations that strengthen visibility, encourage engagement and introduce brands to new audiences.
                 </p>
                 <p>
-                  At ANTS CLAN, we handle everything from talent matchmaking and contract negotiation to campaign creative direction and ROI measurement.
+                  At Antsclanmedia, we handle everything from talent matchmaking and contract negotiation to campaign creative direction and ROI measurement.
                 </p>
               </div>
 

@@ -13,7 +13,7 @@ const InsightsPage = () => {
             MEDIA & TECHNOLOGY.
           </>
         }
-        description="Articles, industry analysis, and creative playbooks from the minds behind Ann's Clan."
+        description="Articles, industry analysis, and creative playbooks from the minds behind Antsclanmedia."
       />
 
       <Insights />

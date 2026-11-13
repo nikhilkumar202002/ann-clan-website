@@ -13,7 +13,7 @@ const AboutUs = () => {
       <CommonBanner
         align="center"
         bgImage="/banners/about-banner.jpg"
-        badge="[ ABOUT ANTS CLAN ]"
+        badge="[ ABOUT ANTSCLANMEDIA ]"
         title={
           <>
             WE TURN IDEAS <br className="hidden sm:inline" />

@@ -14,7 +14,7 @@ const Team = () => {
       id: '02',
       name: 'Ann Mary George',
       role: 'Founder',
-      bio: "The visionary behind ANTS CLAN, shaping the company's foundation, creative direction and commitment to building meaningful brand experiences.",
+      bio: "The visionary behind Antsclanmedia, shaping the company's foundation, creative direction and commitment to building meaningful brand experiences.",
       image: '/Team/Ann-mary.jpg',
     },
     {
@@ -100,7 +100,7 @@ const Team = () => {
               </h2>
 
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal mt-5 max-w-2xl">
-                Great ideas are driven by great people. Meet the leadership team shaping the vision, creativity and growth of ANTS CLAN.
+                Great ideas are driven by great people. Meet the leadership team shaping the vision, creativity and growth of Antsclanmedia.
               </p>
             </motion.div>
 

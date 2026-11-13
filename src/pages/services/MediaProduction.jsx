@@ -144,7 +144,7 @@ const MediaProduction = () => {
                   We produce engaging visual content that brings brand ideas to life. From concept development to final production, we focus on creating compelling stories that connect with audiences across television, streaming, and digital formats.
                 </p>
                 <p>
-                  At ANTS CLAN, our production crew combines state-of-the-art camera technology, art direction, and post-production mastery to produce unforgettable films.
+                  At Antsclanmedia, our production crew combines state-of-the-art camera technology, art direction, and post-production mastery to produce unforgettable films.
                 </p>
               </div>
 

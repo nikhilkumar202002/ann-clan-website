@@ -18,7 +18,7 @@ const WhoWeAre = () => {
             <div className="relative aspect-[4/5] max-h-[640px] w-full overflow-hidden bg-gray-100 border border-gray-200">
               <img
                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80"
-                alt="ANTS CLAN creative strategy & media studio"
+                alt="Antsclanmedia creative strategy & media studio"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
@@ -50,7 +50,7 @@ const WhoWeAre = () => {
 
             {/* Lead Statement */}
             <p className="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
-              ANTS CLAN PICTURE COMPANY is a creative media and marketing company focused on helping brands grow in an ever-evolving digital world.
+              Antsclanmedia is a creative media and marketing company focused on helping brands grow in an ever-evolving digital world.
             </p>
 
             {/* Narrative Body Copy */}

@@ -138,7 +138,7 @@ const Contact = () => {
                   Enquiry Received!
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 max-w-md mx-auto">
-                  Thank you for reaching out to ANTS CLAN. Our team will review your project details and connect with you shortly.
+                  Thank you for reaching out to Antsclanmedia. Our team will review your project details and connect with you shortly.
                 </p>
                 <div className="pt-4">
                   <button

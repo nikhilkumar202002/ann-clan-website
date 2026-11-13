@@ -52,10 +52,10 @@ const Footer = () => {
         >
           {/* Brand info (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
-            <Link to="/" className="inline-block" aria-label="Ann's Clan Home">
+            <Link to="/" className="inline-block" aria-label="Antsclanmedia Home">
               <img
                 src="/logo/main-logo-white.png"
-                alt="Ann's Clan"
+                alt="Antsclanmedia"
                 className="h-9 w-auto object-contain"
               />
             </Link>

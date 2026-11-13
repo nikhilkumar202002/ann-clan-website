@@ -38,10 +38,10 @@ const PrivacyPolicy = () => {
                 1. Introduction
               </h2>
               <p>
-                Welcome to ANTS CLAN PICTURE COMPANY (&quot;ANTS CLAN&quot;, &quot;we&quot;, &quot;our&quot; or &quot;us&quot;).
+                Welcome to Antsclanmedia (&quot;Antsclanmedia&quot;, &quot;we&quot;, &quot;our&quot; or &quot;us&quot;).
               </p>
               <p>
-                At ANTS CLAN, we respect your privacy and are committed to protecting the personal information you share with us through our website,{' '}
+                At Antsclanmedia, we respect your privacy and are committed to protecting the personal information you share with us through our website,{' '}
                 <a
                   href="https://antsclanmedia.com/"
                   target="_blank"
@@ -169,7 +169,7 @@ const PrivacyPolicy = () => {
                 5. Sharing of Information
               </h2>
               <p>
-                ANTS CLAN does not sell or rent your personal information to third parties.
+                Antsclanmedia does not sell or rent your personal information to third parties.
               </p>
               <p>
                 We may share information with trusted service providers when necessary to operate our website or business, including:
@@ -294,7 +294,7 @@ const PrivacyPolicy = () => {
 
               <div className="border border-gray-200 bg-gray-50 p-6 sm:p-8 space-y-3">
                 <p className="font-black text-lg sm:text-xl text-gray-900 uppercase tracking-tight">
-                  ANTS CLAN PICTURE COMPANY
+                  Antsclanmedia
                 </p>
                 <p className="text-gray-700">
                   <span className="font-semibold text-gray-900">Location:</span> Kochi, Kerala, India
@@ -344,7 +344,7 @@ const PrivacyPolicy = () => {
                 WE GROW YOUR BRAND.
               </span>
               <span className="text-xs font-mono uppercase tracking-widest text-gray-400">
-                ANTS CLAN &copy; {new Date().getFullYear()}
+                Antsclanmedia &copy; {new Date().getFullYear()}
               </span>
             </div>
           </div>

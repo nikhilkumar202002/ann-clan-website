@@ -144,7 +144,7 @@ const WebDevelopment = () => {
                   We create modern, responsive and user-friendly websites that communicate your identity, engage visitors and support your business goals. From robust web applications to sleek landing pages and immersive brand showcases, our code is built to excel.
                 </p>
                 <p>
-                  At ANTS CLAN, our engineering bridges aesthetic elegance with technical precision to deliver platforms that turn visitors into loyal advocates.
+                  At Antsclanmedia, our engineering bridges aesthetic elegance with technical precision to deliver platforms that turn visitors into loyal advocates.
                 </p>
               </div>
 

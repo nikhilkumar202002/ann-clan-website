@@ -68,10 +68,6 @@ const OurWork = ({ showHeader = true }) => {
       {/* 2-ROW DUAL OPPOSITE DIRECTION SLIDERS */}
       {/* ======================================================== */}
       <div className="space-y-6 sm:space-y-8 relative">
-        {/* Left & Right Soft Fade Vignettes for Clean Viewport Edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-24 bg-gradient-to-r from-white to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-24 bg-gradient-to-l from-white to-transparent z-20" />
-
         {/* ---------------------------------------------------- */}
         {/* ROW 1: 10 VIDEOS (SLIDES TO THE LEFT) */}
         {/* ---------------------------------------------------- */}

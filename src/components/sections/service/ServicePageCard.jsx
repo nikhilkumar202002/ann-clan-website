@@ -251,7 +251,7 @@ const ServicePageCard = () => {
                   Every brand has unique goals and challenges. Whether you need an integrated 360° campaign, a high-impact launch, or specialized creative direction, we assemble the ideal team for your project.
                 </p>
                 <p>
-                  Collaborate with ANTS CLAN to craft meaningful brand experiences and stories that create lasting value.
+                  Collaborate with Antsclanmedia to craft meaningful brand experiences and stories that create lasting value.
                 </p>
               </div>
 

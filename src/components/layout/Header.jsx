@@ -82,10 +82,10 @@ const Header = () => {
           >
             {/* Left Side: Logo (white on dark hero, black on light/scrolled) */}
             <div className="flex-shrink-0">
-              <Link to="/" className="flex items-center" aria-label="Ann's Clan Home">
+              <Link to="/" className="flex items-center" aria-label="Antsclanmedia Home">
                 <img
                   src={isDark ? '/logo/main-logo-white.png' : '/logo/main-logo-black.png'}
-                  alt="Ann's Clan"
+                  alt="Antsclanmedia"
                   className="h-6 sm:h-7 md:h-8 w-auto object-contain transition-opacity duration-300"
                 />
               </Link>
@@ -173,7 +173,7 @@ const Header = () => {
           {/* Bottom Info Bar inside Drawer */}
           <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-gray-500">
             <div>
-              <p className="font-semibold text-black">Ann's Clan Picture Company</p>
+              <p className="font-semibold text-black">Antsclanmedia</p>
               <p className="text-gray-400 mt-0.5">Media, Marketing & Technology</p>
             </div>
             <div className="flex flex-wrap items-center gap-4 sm:gap-6">

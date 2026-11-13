@@ -141,7 +141,7 @@ const DigitalMarketing = () => {
                   Having an online presence is just the beginning. The real opportunity lies in reaching the right people with the right message.
                 </p>
                 <p>
-                  At ANTS CLAN, we combine creative thinking and digital strategy to help brands communicate effectively across online platforms.
+                  At Antsclanmedia, we combine creative thinking and digital strategy to help brands communicate effectively across online platforms.
                 </p>
                 <p>
                   From social media management to digital advertising and content strategy, we create marketing solutions designed around your brand and business objectives.

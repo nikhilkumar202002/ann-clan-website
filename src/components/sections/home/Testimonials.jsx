@@ -7,14 +7,14 @@ const Testimonials = () => {
     {
       id: 1,
       quote:
-        "Ann's Clan brought our vision to life with clarity and precision. Their collaborative approach made the process seamless and the outcome exceptional.",
+        "Antsclanmedia brought our vision to life with clarity and precision. Their collaborative approach made the process seamless and the outcome exceptional.",
       author: 'Emily Carter',
       role: 'Brand Director, Northfield',
     },
     {
       id: 2,
       quote:
-        "The attention to detail and quality of work exceeded our expectations. Ann's Clan is a trusted partner we'll keep coming back to.",
+        "The attention to detail and quality of work exceeded our expectations. Antsclanmedia is a trusted partner we'll keep coming back to.",
       author: 'Daniel Lee',
       role: 'Co-Founder, Makers & Co',
     },
@@ -28,7 +28,7 @@ const Testimonials = () => {
     {
       id: 4,
       quote:
-        "Working with Ann's Clan felt like an organic extension of our core team. High-velocity execution paired with uncompromising design standards.",
+        "Working with Antsclanmedia felt like an organic extension of our core team. High-velocity execution paired with uncompromising design standards.",
       author: 'Alexander Vance',
       role: 'Founder & CEO, Horizon Studio',
     },
